@@ -1,0 +1,20 @@
+@import "./variables";
+
+@mixin shadow {
+  border-radius: 0.25rem;
+  box-shadow: 0 0.25rem 0.5rem 0 $shadowColor;
+}
+
+@mixin standarFont {
+  font-family: $myFontFamily;
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+@mixin bigFont {
+  font-family: $myFontFamily;
+  font-size: 1rem;
+}
+@mixin stateOnColor {
+  color: $stateOn;
+  background-color: $stateBackOn;
+}
