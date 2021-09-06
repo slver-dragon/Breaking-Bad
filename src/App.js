@@ -1,4 +1,4 @@
-import CardList from './components/organism/cardList';
+import CardList from './components/organism/CardList';
 
 function App() {
   return (

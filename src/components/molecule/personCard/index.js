@@ -1,25 +1,31 @@
 import React from 'react';
 import style from "./style.module.scss";
 
-function personCard(card) {
-  let statusElement;    
-  if (card.status === 'живой') {
-    statusElement = <p className={style.state + " " + style.alive}>{card.status}</p>
-  } else {
-    statusElement = <p className={style.state + " " + style.deceased}>{card.status}</p>
+
+const PersonCard = ({ name, birthday, img, status}) => {
+  let statusElement;
+  switch (status) {
+    case 'живой': {
+      statusElement = <p className={style.state + " " + style.alive}>{status}</p>
+      break
+    }
+    default : {
+      statusElement = <p className={style.state + " " + style.deceased}>{status}</p>
+    }
   }
+
   return (
     <div className={style.main}>
       <div className={style.photoWrapper}>
-        <img className={style.photo} src={card.img} alt={card.name} />
+        <img className={style.photo} src={img} alt={name} />
       </div>
       <div className={style.inform}>
         {statusElement}
-        <p className={style.name}>{card.name}</p>
-        <p className={style.birthday}>{card.birthday}</p>
+        <p className={style.name}>{name}</p>
+        <p className={style.birthday}>{birthday}</p>
       </div>
     </div>
   );
 }
 
-export default personCard;
+export default PersonCard;

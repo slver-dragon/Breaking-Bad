@@ -1,9 +1,9 @@
 import React from "react";
 import { v4 as uuid4 } from "uuid";
-import PersonCard from "../../molecule/personCard";
+import PersonCard from "../../molecule/PersonCard";
 import style from "./style.module.scss";
 
-function cardList() {
+function CardList() {
   const cards = [
     {
       id: uuid4(),
@@ -58,4 +58,4 @@ function cardList() {
   </ul>);
 }
 
-export default cardList;
+export default CardList;
