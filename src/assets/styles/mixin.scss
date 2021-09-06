@@ -18,3 +18,7 @@
   color: $stateOn;
   background-color: $stateBackOn;
 }
+@mixin stateOffColor {
+  color: $stateOff;
+  background-color: $stateBackOff;
+}

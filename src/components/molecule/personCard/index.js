@@ -1,18 +1,26 @@
 import React from 'react';
-import photo from "../../../assets/img/photo-small.svg";
 import style from "./style.module.scss";
 
-function pers() {
-    const state = 'живой';
-    const name = 'Андрей Панасюк';
-    const birthday = '23.11.2001';
+
+const PersonCard = ({ name, birthday, img, status}) => {
+  let statusElement;
+  switch (status) {
+    case 'живой': {
+      statusElement = <p className={style.state + " " + style.alive}>{status}</p>
+      break
+    }
+    default : {
+      statusElement = <p className={style.state + " " + style.deceased}>{status}</p>
+    }
+  }
+
   return (
     <div className={style.main}>
       <div className={style.photoWrapper}>
-        <img className={style.photo} src={photo} alt={name} />
+        <img className={style.photo} src={img} alt={name} />
       </div>
       <div className={style.inform}>
-        <p className={style.state}>{state}</p>
+        {statusElement}
         <p className={style.name}>{name}</p>
         <p className={style.birthday}>{birthday}</p>
       </div>
@@ -20,4 +28,4 @@ function pers() {
   );
 }
 
-export default pers;
+export default PersonCard;

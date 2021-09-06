@@ -1,8 +1,8 @@
-import Pers from './components/molecule/personCard'
+import CardList from './components/organism/CardList';
 
 function App() {
   return (
-    <Pers />
+    <CardList />
   );
 }
 
