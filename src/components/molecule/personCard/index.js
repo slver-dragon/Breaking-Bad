@@ -1,23 +1,25 @@
 import React from 'react';
-import photo from "../../../assets/img/photo-small.svg";
 import style from "./style.module.scss";
 
-function pers() {
-    const state = 'живой';
-    const name = 'Андрей Панасюк';
-    const birthday = '23.11.2001';
+function personCard(card) {
+  let statusElement;    
+  if (card.status === 'живой') {
+    statusElement = <p className={style.state + " " + style.alive}>{card.status}</p>
+  } else {
+    statusElement = <p className={style.state + " " + style.deceased}>{card.status}</p>
+  }
   return (
     <div className={style.main}>
       <div className={style.photoWrapper}>
-        <img className={style.photo} src={photo} alt={name} />
+        <img className={style.photo} src={card.img} alt={card.name} />
       </div>
       <div className={style.inform}>
-        <p className={style.state}>{state}</p>
-        <p className={style.name}>{name}</p>
-        <p className={style.birthday}>{birthday}</p>
+        {statusElement}
+        <p className={style.name}>{card.name}</p>
+        <p className={style.birthday}>{card.birthday}</p>
       </div>
     </div>
   );
 }
 
-export default pers;
+export default personCard;
