@@ -4,7 +4,8 @@ import CardList from "./component";
 
 const CardListContainer = () => {
   const cards = useSelector((state) => state.cardListReducer.cards);
-  return <CardList cards={cards} />;
+  const test = useSelector((state) => state.cardListReducer.test);
+  return <CardList cards={cards} test={test}/>;
 }
 
 export const container = CardListContainer

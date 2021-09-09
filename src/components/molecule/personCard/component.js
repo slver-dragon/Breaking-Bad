@@ -1,9 +1,13 @@
 import React from 'react';
 import style from './style.module.scss';
 import { change } from '../../../store/actions/test';
+import store from "../../../store";
 
+function exchange () {
+  store.dispatch(change())
+}
 
-const PersonCard = ({ name, birthday, img, status}, test) => {
+const PersonCard = ({ name, birthday, img, status, test}) => {
   let statusElement;
   switch (status) {
     case 'живой': {
@@ -17,14 +21,14 @@ const PersonCard = ({ name, birthday, img, status}, test) => {
 
   return (
     <div className={style.main}>
-      <div className={style.photoWrapper}>
-        <img onClick={change} className={style.photo} src={img} alt={name} />
+      <div onClick={exchange} className={style.photoWrapper}>
+        <img className={style.photo} src={img} alt={name} />
       </div>
       <div className={style.inform}>
         {statusElement}
         <p className={style.name}>{name}</p>
-        <p className={style.birthday}>{birthday}</p>
-        {console.log()}
+        <p className={style.birthday}>{birthday} </p>
+        <p> { test.toString() } </p>
       </div>
     </div>
 
