@@ -1,11 +1,6 @@
 import React from 'react';
 import style from './style.module.scss';
-import { change } from '../../../store/actions/test';
-import store from "../../../store";
-
-function exchange () {
-  store.dispatch(change())
-}
+import exchange from '../../organism/CardList/container';
 
 const PersonCard = ({ name, birthday, img, status, test}) => {
   let statusElement;

@@ -1,6 +1,7 @@
 import React from "react";
 import PersonCard from "../../molecule/PersonCard/component";
 import style from "./style.module.scss";
+import exchange from "./container";
 
 function CardList({cards, test}) {
   const listItem = cards.map((card) => (
@@ -17,4 +18,5 @@ function CardList({cards, test}) {
   return <ul className={style.wrapper}>{listItem}</ul>;
 }
 
+export {exchange}
 export default CardList;
