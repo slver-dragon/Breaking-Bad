@@ -1,6 +1,5 @@
 import React from 'react';
 import style from './style.module.scss';
-import exchange from '../../organism/CardList/container';
 
 const PersonCard = ({ name, birthday, img, status, test}) => {
   let statusElement;
@@ -16,14 +15,13 @@ const PersonCard = ({ name, birthday, img, status, test}) => {
 
   return (
     <div className={style.main}>
-      <div onClick={exchange} className={style.photoWrapper}>
+      <div className={style.photoWrapper}>
         <img className={style.photo} src={img} alt={name} />
       </div>
       <div className={style.inform}>
         {statusElement}
         <p className={style.name}>{name}</p>
         <p className={style.birthday}>{birthday} </p>
-        <p> { test.toString() } </p>
       </div>
     </div>
 

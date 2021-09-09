@@ -1,5 +1,4 @@
 import { v4 as uuid4 } from "uuid";
-import TEST from "../actionTypes/test";
 
 const initialState = {
   cards: [
@@ -44,12 +43,6 @@ const initialState = {
 
 const cardListReducer = (state = initialState, action) => {
   switch (action.type) {
-    case TEST: {
-      return {
-        ...state,
-        test: true,
-      };
-    }
     default:
       return state;
   }
