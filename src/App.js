@@ -6,5 +6,4 @@ function App() {
     <CardList />
   );
 }
-
 export default App;

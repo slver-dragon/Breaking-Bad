@@ -5,7 +5,7 @@ import style from "./style.module.scss";
 function CardList({cards}) {
   const listItem = cards.map((card) => (
     <PersonCard
-      key={card.id}
+      key={card.char_id}
       name={card.name}
       birthday={card.birthday}
       img={card.img}

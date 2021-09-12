@@ -1,15 +1,19 @@
-import React from 'react';
-import style from './style.module.scss';
+import React from "react";
+import style from "./style.module.scss";
 
-const PersonCard = ({ name, birthday, img, status, test}) => {
+const PersonCard = ({ name, birthday, img, status }) => {
   let statusElement;
   switch (status) {
-    case 'живой': {
-      statusElement = <p className={style.state + " " + style.alive}>{status}</p>
-      break
+    case "alive": {
+      statusElement = (
+        <p className={style.state + " " + style.alive}>{status}</p>
+      );
+      break;
     }
-    default : {
-      statusElement = <p className={style.state + " " + style.deceased}>{status}</p>
+    default: {
+      statusElement = (
+        <p className={style.state + " " + style.deceased}>{status}</p>
+      );
     }
   }
 
@@ -24,8 +28,7 @@ const PersonCard = ({ name, birthday, img, status, test}) => {
         <p className={style.birthday}>{birthday} </p>
       </div>
     </div>
-
   );
-}
+};
 
 export default PersonCard;
