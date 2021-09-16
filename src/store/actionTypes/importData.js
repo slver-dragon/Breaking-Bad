@@ -1,3 +1,3 @@
-const IMPORT_DATA = "IMPORT_DATA";
-
-export default IMPORT_DATA;
+export const IMPORT_DATA = "IMPORT_DATA";
+export const IMPORT_ERROR = "IMPORT_ERROR";
+export const IMPORT_IN_PROGRESS = "IMPORT_IN_PROGRESS";
