@@ -1,18 +1,32 @@
 import {
-  IMPORT_DATA,
-  IMPORT_ERROR,
-  IMPORT_IN_PROGRESS,
-} from "../actionTypes/importData";
-import { initialState } from "../repository/store"
+  SET_CHARACTERS,
+  CHANGE_CHARACTERS_LOADER_VALUE,
+  ERROR_GETTING_CHARACTERS,
+} from "../actionTypes/newCharacters";
+
+const initialState = {
+  characters: [],
+  isFetching: false,
+  isError: false,
+};
 
 const cardListReducer = (state = initialState, action) => {
   switch (action.type) {
-    case IMPORT_DATA:
-      return { ...state, cards: [action.payload], isLoad: false };
-    case IMPORT_ERROR:
-      return null;
-    case IMPORT_IN_PROGRESS:
-      return { ...state, isLoad: true };
+    case SET_CHARACTERS:
+      return {
+        ...state,
+        characters: action.payload,
+      };
+    case CHANGE_CHARACTERS_LOADER_VALUE:
+      return {
+        ...state,
+        isFetching: action.payload,
+      };
+    case ERROR_GETTING_CHARACTERS:
+      return {
+        ...state,
+        isError: action.payload,
+      };
     default:
       return state;
   }

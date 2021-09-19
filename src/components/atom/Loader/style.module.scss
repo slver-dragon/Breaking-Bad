@@ -1,0 +1,25 @@
+.fetching {
+  width: 7rem;
+  height: 7rem;
+  border-radius: 100%;
+  border: 0.125rem dashed rgb(250, 0, 0);
+  position: absolute;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  animation-name: search-fething;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes search-fething {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

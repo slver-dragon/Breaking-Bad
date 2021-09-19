@@ -1,24 +1,22 @@
-@import "./variables";
-
-@mixin shadow {
+@mixin cardShadow {
+  box-shadow: 0px 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
   border-radius: 0.25rem;
-  box-shadow: 0 0.25rem 0.5rem 0 $shadowColor;
 }
-
-@mixin standarFont {
-  font-family: $myFontFamily;
+@mixin greenBlock {
+  display: block;
+  background-color: $greenBackground;
+  color: $lightGreen;
+  text-align: center;
+  padding: 0.5rem 0.75rem;
   font-size: 0.75rem;
-  font-weight: 400;
+  line-height: 1rem;
+  letter-spacing: 0.045rem;
 }
-@mixin bigFont {
-  font-family: $myFontFamily;
+@mixin smallText {
+  font-size: 0.75rem;
+  line-height: 1.5rem;
+}
+@mixin largeText {
   font-size: 1rem;
-}
-@mixin stateOnColor {
-  color: $stateOn;
-  background-color: $stateBackOn;
-}
-@mixin stateOffColor {
-  color: $stateOff;
-  background-color: $stateBackOff;
+  line-height: 1.5rem;
 }
