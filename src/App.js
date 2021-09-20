@@ -1,8 +1,19 @@
 import React from "react";
-import CardList from "./components/organism/CardList";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Home from "./components/pages/Home";
+import Catalog from "./components/pages/Catalog";
+import PersonItem from "./components/pages/Personitem";
 
 function App() {
-  return <CardList />;
+  return (
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/catalog" component={Catalog} />
+        <Route path="/personitem" component={PersonItem} />
+      </Switch>
+    </BrowserRouter>
+  );
 }
 
 export default App;
