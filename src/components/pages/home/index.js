@@ -4,8 +4,8 @@ import style from "./style.module.scss";
 
 const Home = () => {
   return (
-    <div className={style.home}>
-      <img src={photo} alt="Breaking Bad" />
+    <div>
+      <img className={style.image} src={photo} alt="Breaking Bad" />
     </div>
   );
 };
