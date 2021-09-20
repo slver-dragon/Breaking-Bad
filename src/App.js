@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Home from "./components/pages/Home_";
+import Home from "./components/pages/Home";
 import Catalog from "./components/pages/Catalog";
-import PersonItem from "./components/pages/Personitem_";
+import PersonItem from "./components/pages/Personitem";
 
 function App() {
   return (
