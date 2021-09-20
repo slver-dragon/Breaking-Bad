@@ -1,2 +1,2 @@
-export * from "./component"
-export { container as default } from "./container"
+export * from "../../organism/CardList"
+export { container as default } from "../../organism/CardList/container"
