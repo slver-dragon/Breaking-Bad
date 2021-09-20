@@ -1,10 +1,8 @@
 import React from "react";
-import CardList from './components/organism/CardList';
+import CardList from "./components/organism/CardList";
 
 function App() {
-  return (
-    <CardList />
-  );
+  return <CardList />;
 }
 
 export default App;
