@@ -14,11 +14,11 @@ const CardList = ({ characters, isFetching, isError }) => {
           <div className={style.cardList}>
             {characters.map((character) => (
               <Card
+                key={character.char_id}
                 img={character.img}
                 name={character.name}
                 birthday={character.birthday}
                 status={character.status}
-                key={character.id}
               />
             ))}
           </div>

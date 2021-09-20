@@ -1,7 +1,7 @@
 import { SET_CHARACTERS } from "../actionTypes/newCharacters";
 import { CHANGE_CHARACTERS_LOADER_VALUE } from "../actionTypes/newCharacters";
 import { ERROR_GETTING_CHARACTERS } from "../actionTypes/newCharacters";
-import Repository from "../repository";
+import Repository from "../../repository";
 
 export const setCharacters = (characters) => ({
   type: SET_CHARACTERS,

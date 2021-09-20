@@ -1,4 +1,4 @@
-import CardList from "./CardList/index";
+import CardList from "./CardList";
 
 class Reposirory {
   APICardsList = CardList;
