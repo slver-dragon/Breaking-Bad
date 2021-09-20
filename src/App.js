@@ -1,15 +1,15 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import CardList from "./components/pages/cardlist";
-import Home from "./components/pages/home";
-import PersonItem from "./components/pages/personitem";
+import Home from "./components/pages/Home";
+import Catalog from "./components/pages/Catalog";
+import PersonItem from "./components/pages/Personitem";
 
 function App() {
   return (
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/cardlist" component={CardList} />
+        <Route path="/catalog" component={Catalog} />
         <Route path="/personitem" component={PersonItem} />
       </Switch>
     </BrowserRouter>
