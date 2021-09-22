@@ -4,15 +4,21 @@ import style from "./style.module.scss";
 const PersonCard = ({ name, birthday, img, status }) => {
   let statusElement;
   switch (status) {
-    case "alive": {
+    case "Alive": {
       statusElement = (
         <p className={style.state + " " + style.alive}>{status}</p>
       );
       break;
     }
-    default: {
+    case "Deceased": {
       statusElement = (
         <p className={style.state + " " + style.deceased}>{status}</p>
+      );
+      break;
+    }
+    default: {
+      statusElement = (
+        <p className={style.state + " " + style.presumedDead}>{status}</p>
       );
     }
   }

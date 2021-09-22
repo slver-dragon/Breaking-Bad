@@ -3,16 +3,21 @@ import {
   IMPORT_ERROR,
   IMPORT_IN_PROGRESS,
 } from "../actionTypes/importData";
-import { initialState } from "../repository/store"
+
+export const initialState = {
+  cards: [],
+  isLoad: false,
+  isError: false,
+};
 
 const cardListReducer = (state = initialState, action) => {
   switch (action.type) {
     case IMPORT_DATA:
-      return { ...state, cards: [action.payload], isLoad: false };
+      return {...state, cards: action.payload};
     case IMPORT_ERROR:
-      return null;
+      return { ...state, isError: action.payload};
     case IMPORT_IN_PROGRESS:
-      return { ...state, isLoad: true };
+      return { ...state, isLoad: action.payload};
     default:
       return state;
   }

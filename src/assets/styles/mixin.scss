@@ -22,3 +22,7 @@
   color: $stateOff;
   background-color: $stateBackOff;
 }
+@mixin statePDColor {
+  color: $statePD;
+  background-color: $stateBackPD;
+}

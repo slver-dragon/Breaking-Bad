@@ -32,7 +32,9 @@
     .deceased {
       @include stateOffColor;
     }
-
+    .presumedDead {
+      @include statePDColor;
+    }
     .name {
       @include bigFont;
       margin-bottom: 0.5rem;
