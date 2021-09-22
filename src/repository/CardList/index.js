@@ -1,6 +1,6 @@
 import axios from "axios";
 
-class CardList {
+export class CardList {
   createCardList = async () => {
     let result = {
       value: null,

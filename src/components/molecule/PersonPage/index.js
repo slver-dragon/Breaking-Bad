@@ -1,15 +1,10 @@
 import React from "react";
 import style from "./style.module.scss";
-import Quote from "../../organism/CardList";
 
-export const quoteQuerry = (img, name, status, birthday) => {
-  console.log(img, status, name, birthday)
-}
-
-
-const Card = ({ img, status, name, birthday }) => {
+const Page = ({ img, status, name, birthday, quote }) => {
+  console.log('Мы в PersonPage')
   return (
-    <div onClick={() => Quote(img, status, name, birthday)} className={style.card}>
+    <div className={style.card}>
       <div className={style.image}>
         <img src={img} alt="card-img" />
       </div>
@@ -17,9 +12,10 @@ const Card = ({ img, status, name, birthday }) => {
         <p className={style.status}>{status}</p>
         <p className={style.name}>{name}</p>
         <p className={style.birth}>{birthday}</p>
+        <p className={style.quote}>{quote}</p>
       </div>
     </div>
   );
 };
 
-export default Card;
+export default Page;

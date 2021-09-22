@@ -2,10 +2,11 @@ import {
   SET_CHARACTERS,
   CHANGE_CHARACTERS_LOADER_VALUE,
   ERROR_GETTING_CHARACTERS,
-} from "../actionTypes/newCharacters";
+} from "../actionTypes";
 
-const initialState = {
+export const initialState = {
   characters: [],
+  quote: '',
   isFetching: false,
   isError: false,
 };
