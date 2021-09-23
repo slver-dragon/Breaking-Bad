@@ -12,7 +12,7 @@ class CardList {
       );
       result.value = response.data;
     } catch (error) {
-      result.error = error.response;
+      result.error = error.message;
     }
     return result;
   };

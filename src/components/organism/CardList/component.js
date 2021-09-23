@@ -4,28 +4,28 @@ import Loader from "../../atom/Loader";
 import Error from "../../atom/Error";
 import style from "./style.module.scss";
 
-function CardList({ cards, isLoading, isError }) {
-  const listItem = cards.map((card) => (
+const CardList = ({ characters, isLoading, errorValue }) => {
+  const listItem = !errorValue ? characters.map((character) => (
     <PersonCard
-      key={card.char_id}
-      name={card.name}
-      birthday={card.birthday}
-      img={card.img}
-      status={card.status}
+      key={character.char_id}
+      name={character.name}
+      birthday={character.birthday}
+      img={character.img}
+      status={character.status}
     />
-  ));
+  )) : ('');
 
   return (
     <div>
-      {isError ? (
-        <Error textError="Ошибка загрузки данных: " />
+      {errorValue ? (
+        <Error textError={"Ошибка загрузки данных: " + errorValue} />
       ) : !isLoading ? (
-        <ul className={style.wrapper}>{listItem}</ul>
+        <div className={style.wrapper}>{listItem}</div>
       ) : (
         <Loader />
       )}
     </div>
   );
-}
+};
 
 export default CardList;

@@ -1,36 +1,28 @@
 import {
-  IMPORT_DATA,
-  IMPORT_ERROR,
-  IMPORT_IN_PROGRESS,
+  LOAD_PERSON,
+  LOADING_ERROR,
+  LOADING_IN_PROGRESS,
 } from "../actionTypes/importData";
 import Repository from "../../repository";
 
-export const importData = (payload) => {
-  return {
-    type: IMPORT_DATA,
-    payload,
-  };
+export const loadPerson = (value) => {
+  return { type: LOAD_PERSON, payload: value };
 };
 
-export const importError = (payload) => {
-  return {
-    type: IMPORT_ERROR,
-    payload,
-  };
+export const loadingError = (value) => {
+  return { type: LOADING_ERROR, payload: value };
 };
 
-export const importInProgress = () => {
-  return {
-    type: IMPORT_IN_PROGRESS
-  };
+export const loadInProgress = (value) => {
+  return { type: LOADING_IN_PROGRESS, payload: value };
 };
 
-export const importDataList = () => async (dispatch) => {
-  dispatch(importInProgress(true));
+export const loadPersonList = () => async (dispatch) => {
+  dispatch(loadInProgress(true));
   const { value, error } = await Repository.APICardsList.createCardList();
   if (error || !value) {
-    dispatch(importError(true));
+    dispatch(loadingError(error));
   }
-  dispatch(importData(value));
-  dispatch(importInProgress(false));
+  dispatch(loadPerson(value));
+  dispatch(loadInProgress(false));
 };

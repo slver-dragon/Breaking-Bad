@@ -1,27 +1,23 @@
 import React from "react";
 import style from "./style.module.scss";
 
+let statusStyle = '';
 const PersonCard = ({ name, birthday, img, status }) => {
-  let statusElement;
   switch (status) {
     case "Alive": {
-      statusElement = (
-        <p className={style.state + " " + style.alive}>{status}</p>
-      );
+      statusStyle = style.alive;
       break;
     }
     case "Deceased": {
-      statusElement = (
-        <p className={style.state + " " + style.deceased}>{status}</p>
-      );
+      statusStyle = style.deceased;
       break;
     }
     default: {
-      statusElement = (
-        <p className={style.state + " " + style.presumedDead}>{status}</p>
-      );
+      statusStyle = style.presumedDead;
     }
   }
+
+  const statusElement = ( <p className={style.state + " " + statusStyle}>{status}</p> );
 
   return (
     <div className={style.main}>
