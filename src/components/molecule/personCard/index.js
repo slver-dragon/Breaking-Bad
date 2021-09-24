@@ -11,8 +11,23 @@ const PersonCard = ({ name, birthday, img, status}) => {
     }
     default : {
       statusElement = <p className={style.state + " " + style.deceased}>{status}</p>
+let statusStyle = '';
+const PersonCard = ({ name, birthday, img, status }) => {
+  switch (status) {
+    case "Alive": {
+      statusStyle = style.alive;
+      break;
+    }
+    case "Deceased": {
+      statusStyle = style.deceased;
+      break;
+    }
+    default: {
+      statusStyle = style.presumedDead;
     }
   }
+
+  const statusElement = ( <p className={style.state + " " + statusStyle}>{status}</p> );
 
   return (
     <div className={style.main}>
