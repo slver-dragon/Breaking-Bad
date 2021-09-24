@@ -1,9 +1,3 @@
-import CardList from './components/organism/CardList';
-
-function App() {
-  return (
-    <CardList />
-  );
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 // import CardList from "./components/organism/CardList";
