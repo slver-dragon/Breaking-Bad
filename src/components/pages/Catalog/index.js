@@ -1,5 +1,5 @@
 import React from "react";
-import CardList from "../../organism/CardList";
+import CardList from "../../organism/cardList";
 
 const Catalog = () => {
   return (
