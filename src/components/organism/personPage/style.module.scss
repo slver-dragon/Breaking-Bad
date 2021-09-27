@@ -5,27 +5,27 @@
   display: flex;
   @include shadow;
   @include standarFont;
-  max-width: 23.75rem;
-  margin-bottom: 1.5rem;
-  text-decoration: none;
-  
+  margin: 1.5rem 0rem;
+
   .photoWrapper {
-    width: 7.75rem;
-    height: 7.75rem;
+    width: 36.5rem;
+    height: 36.5rem;
     object-fit: cover;
-    margin-right: 1.5rem;
+    margin-right: 6.4375rem;
     overflow-y: hidden;
-    border-radius: 0.25rem 0 0 0.25rem;
     .photo {
-      max-width: 7.75rem;
+      max-width: 36.5rem;
       height: auto;
     }
   }
   .inform {
+    color: $lightFontcolor;
+    max-width: 25.625rem;
+
     .state {
       display: inline-block;
       padding: 0.5rem 0.75rem;
-      margin: 1rem 0 0.75rem;
+      margin: 0rem 0rem 2rem;
     }
     .alive {
       @include stateOnColor;
@@ -37,11 +37,20 @@
       @include statePDColor;
     }
     .name {
-      @include characterListBigFont;
-      margin-bottom: 0.5rem;
+      @include personPageBigFont;
+      margin-bottom: 1rem;
+      color: $standartFontColor;
     }
-    .birthday {
-      color: $lightFontcolor;
+    .birthday,
+    .nickname,
+    .quote {
+      color: $standartFontColor;
+    }
+    .quoteMargin {
+      margin-top: 2rem;
+    }
+    p {
+      margin-bottom: 1rem;
     }
   }
 }

@@ -2,12 +2,13 @@ import {
   LOAD_PERSON,
   LOADING_ERROR,
   LOADING_IN_PROGRESS,
-} from "../actionTypes/importData";
+  GET_QUOTE,
+} from "../actionTypes/getPersonData";
 
 export const initialState = {
   characters: [],
   isLoad: false,
-  errorValue: '',
+  errorValue: "",
 };
 
 const personListReducer = (state = initialState, action) => {
@@ -15,17 +16,22 @@ const personListReducer = (state = initialState, action) => {
     case LOAD_PERSON:
       return {
         ...state,
-        characters: action.payload
+        characters: action.payload,
       };
     case LOADING_ERROR:
       return {
         ...state,
-        isError: action.payload
+        errorValue: action.payload,
       };
     case LOADING_IN_PROGRESS:
       return {
         ...state,
-        isLoad: action.payload
+        isLoad: action.payload,
+      };
+    case GET_QUOTE:
+      return {
+        ...state,
+        currentPerson: action.payload,
       };
     default:
       return state;

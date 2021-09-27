@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import CardList from "./component";
-import { loadPersonList } from "../../../store/actions/importData";
+import { loadPersonList } from "../../../store/actions/getPersonData";
 
 const PersonListContainer = () => {
   const dispatch = useDispatch();

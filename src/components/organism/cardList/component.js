@@ -12,6 +12,7 @@ const CardList = ({ characters, isLoading, errorValue }) => {
       birthday={character.birthday}
       img={character.img}
       status={character.status}
+      id={character.char_id}
     />
   )) : ('');
 
