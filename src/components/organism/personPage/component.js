@@ -19,7 +19,6 @@ const PersonPage = ({ character }) => {
       statusStyle = style.presumedDead;
     }
   }
-
   const statusElement = (
     <p className={style.state + " " + statusStyle}>{character.status}</p>
   );
@@ -49,27 +48,3 @@ const PersonPage = ({ character }) => {
 };
 
 export default PersonPage;
-
-//         <div className="informSheet">
-//           <img className="photo" src={photo} />
-//           <div className="inform">
-//             <label className="status">ЖИВОЙ</label>
-//             <h2>Андрей Панасюк</h2>
-//             <dl>
-//               <dt>Дата рождения: </dt>
-//               <dd>23.11.201</dd>
-//               <dt>Ник-нейм: </dt>
-//               <dd>Андрей-Завоеватель</dd>
-//               <dt className="quote-title">Цитата: </dt>
-//               <dd className="quote">
-//                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non,
-//                 aliquam laoreet vivamus sed. Diam fames mi, quam tellus cursus
-//                 volutpat velit massa.
-//               </dd>
-//             </dl>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }

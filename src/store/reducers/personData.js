@@ -11,7 +11,7 @@ export const initialState = {
   errorValue: "",
 };
 
-const personListReducer = (state = initialState, action) => {
+const personData = (state = initialState, action) => {
   switch (action.type) {
     case LOAD_PERSON:
       return {
@@ -38,4 +38,4 @@ const personListReducer = (state = initialState, action) => {
   }
 };
 
-export default personListReducer;
+export default personData;
