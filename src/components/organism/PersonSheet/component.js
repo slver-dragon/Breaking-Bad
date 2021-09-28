@@ -5,7 +5,7 @@ let statusStyle = "";
 let quote =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non, aliquam laoreet vivamus sed. Diam fames mi, quam tellus cursus volutpat velit massa.";
 
-const PersonPage = ({ character }) => {
+const PersonSheet = ({ character }) => {
   switch (character.status) {
     case "Alive": {
       statusStyle = style.alive;
@@ -47,4 +47,4 @@ const PersonPage = ({ character }) => {
   );
 };
 
-export default PersonPage;
+export default PersonSheet;
