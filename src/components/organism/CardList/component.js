@@ -1,5 +1,5 @@
 import React from "react";
-import PersonCard from "../../molecule/personCard";
+import PersonCard from "../../molecule/PersonCard";
 import Loader from "../../atom/Loader";
 import Error from "../../atom/Error";
 import style from "./style.module.scss";
