@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import PersonPageContainer from "../../organism/PersonPage";
+import PersonPageContainer from "../../organism/PersonSheet";
 
 const Person = () => {
   return (
