@@ -1,8 +1,10 @@
 import React from "react";
 import style from "./style.module.scss";
+import { Link } from "react-router-dom";
 
-let statusStyle = '';
-const PersonCard = ({ name, birthday, img, status }) => {
+let statusStyle = "";
+
+const PersonCard = ({ name, birthday, img, status, id }) => {
   switch (status) {
     case "Alive": {
       statusStyle = style.alive;
@@ -16,11 +18,12 @@ const PersonCard = ({ name, birthday, img, status }) => {
       statusStyle = style.presumedDead;
     }
   }
-
-  const statusElement = ( <p className={style.state + " " + statusStyle}>{status}</p> );
+  const statusElement = (
+    <p className={style.state + " " + statusStyle}>{status}</p>
+  );
 
   return (
-    <div className={style.main}>
+    <Link to={`/person/${id}`} className={style.main}>
       <div className={style.photoWrapper}>
         <img className={style.photo} src={img} alt={name} />
       </div>
@@ -29,7 +32,7 @@ const PersonCard = ({ name, birthday, img, status }) => {
         <p className={style.name}>{name}</p>
         <p className={style.birthday}>{birthday} </p>
       </div>
-    </div>
+    </Link>
   );
 };
 

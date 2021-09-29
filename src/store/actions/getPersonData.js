@@ -2,7 +2,8 @@ import {
   LOAD_PERSON,
   LOADING_ERROR,
   LOADING_IN_PROGRESS,
-} from "../actionTypes/importData";
+  GET_QUOTE,
+} from "../actionTypes/getPersonData";
 import Repository from "../../repository";
 
 export const loadPerson = (value) => {
@@ -17,6 +18,10 @@ export const loadInProgress = (value) => {
   return { type: LOADING_IN_PROGRESS, payload: value };
 };
 
+export const loadQuoteElement = (quote) => {
+  return { type: GET_QUOTE, payload: quote };
+};
+
 export const loadPersonList = () => async (dispatch) => {
   dispatch(loadInProgress(true));
   const { value, error } = await Repository.APICardsList.createCardList();
@@ -24,5 +29,15 @@ export const loadPersonList = () => async (dispatch) => {
     dispatch(loadingError(error));
   }
   dispatch(loadPerson(value));
+  dispatch(loadInProgress(false));
+};
+
+export const loadQuote = () => async (dispatch) => {
+  dispatch(loadInProgress(true));
+  const { value, error } = await Repository.APIQuote.createQuote();
+  if (error || !value) {
+    dispatch(loadingError(true));
+  }
+  dispatch(loadQuoteElement(value));
   dispatch(loadInProgress(false));
 };
