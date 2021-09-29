@@ -19,27 +19,4 @@
       height: auto;
     }
   }
-  .inform {
-    .state {
-      display: inline-block;
-      padding: 0.5rem 0.75rem;
-      margin: 1rem 0 0.75rem;
-    }
-    .alive {
-      @include stateOnColor;
-    }
-    .deceased {
-      @include stateOffColor;
-    }
-    .presumedDead {
-      @include statePDColor;
-    }
-    .name {
-      @include mediumFont;
-      margin-bottom: 0.5rem;
-    }
-    .birthday {
-      color: $lightFontcolor;
-    }
-  }
 }

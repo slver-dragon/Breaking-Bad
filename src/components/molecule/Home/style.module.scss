@@ -1,0 +1,14 @@
+@import "../../../assets/styles/style";
+
+.main {
+  display: flex;
+  justify-content: space-between;
+  @include mediumFont;
+  margin: 1rem 7.5rem;
+  .image {
+    max-width: 100%;
+  }
+  .catalog {
+    width: 100%;
+  }
+}

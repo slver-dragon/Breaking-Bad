@@ -1,11 +1,10 @@
 import React from "react";
-import { useParams } from "react-router-dom";
-import PersonSheetContainer from "../../organism/PersonSheet";
+import PersonSheet from "../../organism/PersonSheet";
 
 const Person = () => {
   return (
     <div>
-      <PersonSheetContainer value={useParams()} />
+      <PersonSheet />
     </div>
   );
 };
