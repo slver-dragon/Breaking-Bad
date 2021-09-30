@@ -2,8 +2,6 @@
 
 .main {
   display: flex;
-  @include shadow;
-  @include standarFont;
   margin: 1.5rem 0;
   .photoWrapper {
     width: 36.5rem;
