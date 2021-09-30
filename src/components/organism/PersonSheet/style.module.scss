@@ -4,7 +4,7 @@
   display: flex;
   @include shadow;
   @include standarFont;
-  margin: 1.5rem 0rem;
+  margin: 1.5rem 0;
   .photoWrapper {
     width: 36.5rem;
     height: 36.5rem;
@@ -22,7 +22,7 @@
     .state {
       display: inline-block;
       padding: 0.5rem 0.75rem;
-      margin: 0rem 0rem 2rem;
+      margin: 0rem 0 2rem;
     }
     .alive {
       @include stateOnColor;
@@ -36,12 +36,12 @@
     .name {
       @include personPageBigFont;
       margin-bottom: 1rem;
-      color: $standartFontColor;
+      color: $black;
     }
     .birthday,
     .nickname,
     .quote {
-      color: $standartFontColor;
+      color: $black;
     }
     .quoteMargin {
       margin-top: 2rem;
