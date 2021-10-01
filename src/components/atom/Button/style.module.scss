@@ -1,0 +1,17 @@
+@import "../../../assets/styles/style";
+
+.button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+  img {
+    margin-right: 0.83vw;
+  }
+  span {
+    @include mediumFont;
+    color: $black;
+    margin-left: 0.83vw;
+  }
+}

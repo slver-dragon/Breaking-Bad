@@ -12,6 +12,7 @@
 @mixin mediumFont {
   font-family: $myFontFamily;
   font-size: 1rem;
+  font-weight: 400;
 }
 @mixin personPageBigFont {
   font-family: $myFontFamily;

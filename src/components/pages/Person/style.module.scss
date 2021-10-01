@@ -2,29 +2,8 @@
 
 .main {
   padding: 2.5rem 7.5rem;
-  background-color: $standartBG;
   .backToCatalog {
     display: flex;
     text-decoration: none;
-    .leftArrow {
-      position: relative;
-      width: 0.6875rem;
-      height: 0.6875rem;
-      border-left: 0.125rem solid $yellow;
-      border-bottom: 0.125rem solid $yellow;
-      transform: rotate(0.125turn);
-      margin-right: 0.75rem;
-      &:before {
-        content: " ";
-        position: absolute;
-        width: 1rem;
-        border-bottom: 0.125rem solid $yellow;
-        transform: rotate(-0.125turn) translateX(-0.25rem) translateY(0.09rem);
-      }
-    }
-    p {
-      @include mediumFont;
-      color: $black;
-    }
   }
 }
