@@ -15,14 +15,12 @@ const Header = () => {
       <Link className={style.image} to={"/"}>
         <Button
           img={logo}
-          alt={"Breaking Bad"}
           text={""}
         />
       </Link>
       <Link className={catalogStyle} to={"/catalog"}>
         <Button
           img={burger}
-          alt={"Каталог"}
           text={"Каталог"}
         />
       </Link>

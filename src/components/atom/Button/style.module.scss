@@ -7,11 +7,11 @@
   text-decoration: none;
   cursor: pointer;
   img {
-    margin-right: 0.83vw;
+    margin-right: 0.75rem;
   }
   span {
     @include mediumFont;
     color: $black;
-    margin-left: 0.83vw;
+    margin-left: 0.75rem;
   }
 }

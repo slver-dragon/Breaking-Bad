@@ -7,3 +7,13 @@
     text-decoration: none;
   }
 }
+@media (max-width: 768px) {
+  .main {
+    padding: 1.7rem 5rem;
+  }
+}
+@media (max-width: 492px) {
+  .main {
+    padding: 0.8rem 2.5rem;
+  }
+}

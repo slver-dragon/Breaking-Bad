@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-between;
   @include mediumFont;
-  margin: 1.5625vh 8.75vw;
+  margin: 1rem 7.875rem;
   .catalog {
     display: block;
     border: 0.0875rem solid $yellow;
@@ -16,5 +16,15 @@
   }
   .forCardList {
     background-color: $yellow;
+  }
+}
+@media (max-width: 492px) {
+  .main {
+    margin: 0.5rem 3.938rem;
+  }
+}
+@media (max-width: 320px) {
+  .main {
+    margin: 0.25rem 1.969rem;
   }
 }

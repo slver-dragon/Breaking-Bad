@@ -3,18 +3,19 @@
 .wrapper {
   display: grid;
   background-color: $standartBG;
-  grid-template-columns: 31.66% 31.66% 31.66%;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 2rem;
   justify-content: space-between;
 }
 
-@media (max-width: 69rem) {
+@media (max-width: 992px) {
   .wrapper {
-    grid-template-columns: 49% 49%;
+    grid-template-columns: 1fr 1fr;
   }
 }
 
-@media (max-width: 48rem) {
+@media (max-width: 768px) {
   .wrapper {
-    grid-template-columns: 98%;
+    grid-template-columns: 1fr;
   }
 }
