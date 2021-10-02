@@ -2,14 +2,12 @@
 
 .main {
   display: flex;
-  @include shadow;
-  @include standarFont;
-  margin: 1.5rem 0rem;
+  margin-top: 3rem;
   .photoWrapper {
     width: 36.5rem;
     height: 36.5rem;
     object-fit: cover;
-    margin-right: 7vw;
+    margin-right: 6.4375rem;
     overflow-y: hidden;
     .photo {
       width: 100%;
@@ -17,12 +15,12 @@
     }
   }
   .inform {
-    color: $lightFontcolor;
+    color: $gray;
     max-width: 35.96%;
     .state {
       display: inline-block;
       padding: 0.5rem 0.75rem;
-      margin: 0rem 0rem 2rem;
+      margin: 0rem 0 2rem;
     }
     .alive {
       @include stateOnColor;
@@ -36,18 +34,54 @@
     .name {
       @include personPageBigFont;
       margin-bottom: 1rem;
-      color: $standartFontColor;
+      color: $black;
     }
     .birthday,
     .nickname,
     .quote {
-      color: $standartFontColor;
+      color: $black;
     }
     .quoteMargin {
       margin-top: 2rem;
     }
     p {
       margin-bottom: 1rem;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .main {
+    margin-top: 2.5rem;
+    .photoWrapper {
+      margin-right: 4.2916rem;
+    }
+  }
+}
+@media (max-width: 492px) {
+  .main {
+    margin-top: 2rem;
+    .photoWrapper {
+      margin-right: 2.1458rem;
+    }
+  }
+}
+@media (max-width: 320px) {
+  .main {
+    margin-top: 1rem;
+    display: block;
+    .photoWrapper {
+      width: 12.17rem;
+      height: 12.17rem;
+      object-fit: cover;
+      margin-right: 1.0729rem;
+    }
+    .inform {
+      max-width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      .state {
+        margin-top: 1rem;
+      }
     }
   }
 }

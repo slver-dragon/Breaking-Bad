@@ -5,8 +5,9 @@
   @include shadow;
   @include standarFont;
   max-width: 23.75rem;
-  margin-bottom: 1.5rem;
+  margin: 0.75rem 0;
   text-decoration: none;
+  background: $white;
   .photoWrapper {
     width: 7.75rem;
     height: 7.75rem;
@@ -36,10 +37,11 @@
     }
     .name {
       @include mediumFont;
+      color: $black;
       margin-bottom: 0.5rem;
     }
     .birthday {
-      color: $lightFontcolor;
+      color: $gray;
     }
   }
 }

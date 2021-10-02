@@ -1,5 +1,5 @@
 import React from "react";
-import photo from "../../../assets/img/home.svg";
+import photo from "../../../assets/img/home.webp";
 import style from "./style.module.scss";
 
 const Home = () => {

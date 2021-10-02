@@ -1,3 +1,13 @@
-.image {
-  height: 100vh;
+@import "../../../assets/styles/style";
+
+.main {
+  background-color: $standartBG;
+  .container {
+    @include mainContainer;
+    padding-top: 2.5rem;
+    .backToCatalog {
+      display: flex;
+      text-decoration: none;
+    }
+  }
 }
