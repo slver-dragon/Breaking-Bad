@@ -1,19 +1,13 @@
 @import "../../../assets/styles/style";
 
 .main {
-  padding: 2.5rem 7.5rem;
-  .backToCatalog {
-    display: flex;
-    text-decoration: none;
-  }
-}
-@media (max-width: 768px) {
-  .main {
-    padding: 1.7rem 5rem;
-  }
-}
-@media (max-width: 492px) {
-  .main {
-    padding: 0.8rem 2.5rem;
+  background-color: $standartBG;
+  .container {
+    @include mainContainer;
+    padding-top: 2.5rem;
+    .backToCatalog {
+      display: flex;
+      text-decoration: none;
+    }
   }
 }

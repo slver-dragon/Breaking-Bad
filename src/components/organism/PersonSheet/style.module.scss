@@ -2,7 +2,7 @@
 
 .main {
   display: flex;
-  margin: 3rem 0;
+  margin-top: 3rem;
   .photoWrapper {
     width: 36.5rem;
     height: 36.5rem;
@@ -15,7 +15,7 @@
     }
   }
   .inform {
-    color: $lightFontcolor;
+    color: $gray;
     max-width: 35.96%;
     .state {
       display: inline-block;
@@ -51,6 +51,7 @@
 }
 @media (max-width: 768px) {
   .main {
+    margin-top: 2.5rem;
     .photoWrapper {
       margin-right: 4.2916rem;
     }
@@ -58,6 +59,7 @@
 }
 @media (max-width: 492px) {
   .main {
+    margin-top: 2rem;
     .photoWrapper {
       margin-right: 2.1458rem;
     }
@@ -65,6 +67,7 @@
 }
 @media (max-width: 320px) {
   .main {
+    margin-top: 1rem;
     display: block;
     .photoWrapper {
       width: 12.17rem;

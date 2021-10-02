@@ -30,3 +30,16 @@
   color: $white;
   background-color: $stateBackPD;
 }
+@mixin mobile {
+  @media (max-width: $mobile) {
+    @content;
+  }
+}
+@mixin mainContainer {
+  max-width: 75rem;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  
+  @include mobile;
+  padding: 0 1rem;
+}
