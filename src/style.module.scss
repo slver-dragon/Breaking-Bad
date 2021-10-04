@@ -1,0 +1,12 @@
+@import "../src/assets/styles/style.scss";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  .bodyContainer {
+    flex: 1 1 auto;
+    width: 100%;
+  }
+}

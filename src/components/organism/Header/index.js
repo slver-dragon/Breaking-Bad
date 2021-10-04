@@ -11,7 +11,7 @@ const Header = () => {
       ? style.catalog + " " + style.forCardList
       : style.catalog;
   return (
-    <span className={style.main}>
+    <div className={style.main}>
       <Link className={style.image} to={"/"}>
         <Button
           img={logo}
@@ -24,7 +24,7 @@ const Header = () => {
           text={"Каталог"}
         />
       </Link>
-    </span>
+    </div>
   );
 };
 export default Header;
