@@ -6,6 +6,7 @@
   @include mediumFont;
   @include mainContainer;
   @include headerMain;
+  align-items: center;
   .catalog {
     display: block;
     border: 0.0875rem solid $yellow;

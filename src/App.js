@@ -12,7 +12,9 @@ function App() {
     <div className={style.body}>
       <div className={style.wrapper}>
         <BrowserRouter>
-          <Header />
+          <div className={style.header}>
+            <Header />
+          </div>
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/catalog" component={Catalog} />
