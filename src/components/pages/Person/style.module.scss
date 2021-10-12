@@ -1,15 +1,17 @@
 @import "../../../assets/styles/style";
 
-.main {
+.body {
   background-color: $standartBG;
-  .container {
-    @include mainContainer;
+  .main {
     flex: 1 1 auto;
-    background-color: $standartBG;
-    padding-top: 2.5rem;
-    .backToCatalog {
-      display: flex;
-      text-decoration: none;
+    font-family: $myFontFamily;
+    .container {
+      @include mainContainer;
+      padding-top: 2.5rem;
+      .backToCatalog {
+        display: flex;
+        text-decoration: none;
+      }
     }
   }
 }
