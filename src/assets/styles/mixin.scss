@@ -57,27 +57,13 @@
 }
 @mixin mainContainer {
   max-width: 75rem;
-  padding: 0 7.5rem;
+  padding: 0 1rem;
   margin: 0 auto;
   @include small-laptop {
     max-width: 64rem;
-    padding: 0 5rem;
   }
   @include small-screen {
     max-width: 48rem;
-    padding: 0 3.5rem;
-  }
-  @include tablet {
-    max-width: 30rem;
-    padding: 0 2rem;
-  }
-  @include mobile {
-    max-width: 20rem;
-    padding: 0 1.5rem;
-  }
-  @include small-mobile {
-    max-width: 15rem;
-    padding: 0 1rem;
   }
 }
 @mixin personSheetMain {
@@ -107,10 +93,6 @@
 @mixin headerMain {
   padding-top: 1rem;
   padding-bottom: 1rem;
-  @include mobile {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-  }
 }
 @mixin footerMain {
   padding-top: 1.75rem;
