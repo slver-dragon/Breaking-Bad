@@ -5,17 +5,17 @@
   box-shadow: 0 0.25rem 0.5rem 0 $shadowColor;
 }
 @mixin standarFont {
-  font-family: $myFontFamily;
+  font-family: $mainFontFamily;
   font-size: 0.75rem;
   font-weight: 400;
 }
 @mixin mediumFont {
-  font-family: $myFontFamily;
+  font-family: $mainFontFamily;
   font-size: 1rem;
   font-weight: 400;
 }
 @mixin personPageBigFont {
-  font-family: $myFontFamily;
+  font-family: $mainFontFamily;
   font-size: 2rem;
 }
 @mixin stateOnColor {

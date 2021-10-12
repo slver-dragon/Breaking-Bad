@@ -17,6 +17,7 @@
   .inform {
     color: $gray;
     max-width: 35.96%;
+    @include mediumFont;
     .state {
       display: inline-block;
       padding: 0.5rem 0.75rem;

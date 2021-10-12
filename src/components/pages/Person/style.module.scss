@@ -2,9 +2,8 @@
 
 .body {
   background-color: $standartBG;
+  flex: 1 1 auto;
   .main {
-    flex: 1 1 auto;
-    font-family: $myFontFamily;
     .container {
       @include mainContainer;
       padding-top: 2.5rem;
