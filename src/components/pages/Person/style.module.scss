@@ -4,6 +4,8 @@
   background-color: $standartBG;
   .container {
     @include mainContainer;
+    flex: 1 1 auto;
+    background-color: $standartBG;
     padding-top: 2.5rem;
     .backToCatalog {
       display: flex;

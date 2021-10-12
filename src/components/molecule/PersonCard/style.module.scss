@@ -9,8 +9,8 @@
   text-decoration: none;
   background: $white;
   .photoWrapper {
-    width: 7.75rem;
-    height: 7.75rem;
+    max-width: 7.75rem;
+    max-height: 7.75rem;
     object-fit: cover;
     margin-right: 6.33%;
     overflow-y: hidden;
