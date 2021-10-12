@@ -5,7 +5,7 @@ import style from "./style.module.scss";
 const Catalog = () => {
   return (
     <div className={style.container}>
-      <CardList />
+      <CardList className={style.main}/>
     </div>
   );
 };

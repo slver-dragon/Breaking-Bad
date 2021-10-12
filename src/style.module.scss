@@ -1,0 +1,14 @@
+@import "../src/assets/styles/style.scss";
+
+.body {
+  padding: 0;
+  margin: 0;
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    .header {
+      background-color: $white;
+    }
+  }
+}

@@ -2,12 +2,12 @@
 
 .main {
   display: flex;
-  margin-top: 3rem;
+  @include personSheetMain;
   .photoWrapper {
     width: 36.5rem;
     height: 36.5rem;
     object-fit: cover;
-    margin-right: 6.4375rem;
+    @include personSheetPhotoWrapper;
     overflow-y: hidden;
     .photo {
       width: 100%;
@@ -17,6 +17,7 @@
   .inform {
     color: $gray;
     max-width: 35.96%;
+    @include mediumFont;
     .state {
       display: inline-block;
       padding: 0.5rem 0.75rem;
@@ -49,31 +50,21 @@
     }
   }
 }
-@media (max-width: 768px) {
-  .main {
-    margin-top: 2.5rem;
-    .photoWrapper {
-      margin-right: 4.2916rem;
-    }
-  }
+
+@mixin personSheetMain {
+  margin-top: 3rem;
 }
-@media (max-width: 492px) {
-  .main {
-    margin-top: 2rem;
-    .photoWrapper {
-      margin-right: 2.1458rem;
-    }
-  }
+@mixin personSheetPhotoWrapper {
+  margin-right: 6.4375rem;
 }
+
 @media (max-width: 320px) {
   .main {
-    margin-top: 1rem;
     display: block;
     .photoWrapper {
       width: 12.17rem;
       height: 12.17rem;
       object-fit: cover;
-      margin-right: 1.0729rem;
     }
     .inform {
       max-width: 80%;

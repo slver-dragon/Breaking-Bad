@@ -7,12 +7,14 @@ import style from "./style.module.scss";
 
 const Person = () => {
   return (
-    <div className={style.main}>
-      <div className={style.container}>
-        <Link to={"/catalog"} className={style.backToCatalog}>
-          <Button img={leftArrow} text={"Назад в Каталог"} />
-        </Link>
-        <PersonSheet />
+    <div className={style.body}>
+      <div className={style.main}>
+        <div className={style.container}>
+          <Link to={"/catalog"} className={style.backToCatalog}>
+            <Button img={leftArrow} text={"Назад в Каталог"} />
+          </Link>
+          <PersonSheet />
+        </div>
       </div>
     </div>
   );

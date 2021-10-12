@@ -5,8 +5,8 @@
   justify-content: space-between;
   @include mediumFont;
   @include mainContainer;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  @include headerMain;
+  align-items: center;
   .catalog {
     display: block;
     border: 0.0875rem solid $yellow;
@@ -18,11 +18,5 @@
   }
   .forCardList {
     background-color: $yellow;
-  }
-}
-@media (max-width: 482px) {
-  .main {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
   }
 }
