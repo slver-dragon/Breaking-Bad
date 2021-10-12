@@ -3,16 +3,13 @@
 .main {
   display: flex;
   justify-content: space-between;
-  @include mediumFont;
-  @include mainContainer;
-  padding-top: 1.75rem;
-  padding-bottom: 1.75rem;
-  line-height: 1.5rem;
-  width: 100%;
-}
-@media (max-width: 482px) {
-  .main {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    @include mediumFont;
+    @include mainContainer;
+    @include footerMain;
+    line-height: 1.5rem;
+    width: 100%;
   }
 }

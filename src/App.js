@@ -9,20 +9,21 @@ import style from "./style.module.scss";
 
 function App() {
   return (
-    <div className={style.wrapper}>
-      <BrowserRouter>
-        <Header />
-        <div className={style.bodyContainer}>
+    <div className={style.body}>
+      <div className={style.wrapper}>
+        <BrowserRouter>
+          <Header />
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/catalog" component={Catalog} />
             <Route path="/person/:id" component={Person} />
           </Switch>
-        </div>
-        <Footer />
-      </BrowserRouter>
+          <Footer />
+        </BrowserRouter>
+      </div>
     </div>
   );
 }
 
 export default App;
+// Все равно не понимаю, я ведь все это делаю уже внутри футера и хидера? Зачем лишние оболочки?
