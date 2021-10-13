@@ -4,7 +4,7 @@ import style from "./style.module.scss";
 
 const Home = () => {
   return (
-    <div>
+    <div className={style.container}>
       <img className={style.image} src={photo} alt="Breaking Bad" />
     </div>
   );
