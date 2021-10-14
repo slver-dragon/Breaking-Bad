@@ -1,9 +1,9 @@
-.container {
-  display: flex;
-  justify-content: center;
-  .image {
-    max-width: 100%;
-    height: auto;
-    margin: 0 auto;
-  }
+.image {
+  width: 100vw;
+  height: 72vh;
+  background-image: url(./../../../assets/img/home.webp);
+  background-position: center left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
