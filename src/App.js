@@ -9,8 +9,8 @@ import Person from "./components/pages/Person";
 import style from "./style.module.scss";
 
 function App() {
-  const displayHome = useSelector((state) => state.services.displayHome);
-  const wrapperStyle = displayHome ? style.wrapperHome : style.wrapper;
+  const isHomePage = useSelector((state) => state.services.isHomePage);
+  const wrapperStyle = isHomePage ? style.wrapperHome : style.wrapper;
   return (
     <div className={style.body}>
       <div className={wrapperStyle}>

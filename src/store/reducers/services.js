@@ -1,7 +1,7 @@
 import { HOME_PAGE_LOAD } from "../actionTypes/services";
 
 export const initialState = {
-  displayHome: true,
+  isHomePage: true,
 };
 
 const services = (state = initialState, action) => {
@@ -9,7 +9,7 @@ const services = (state = initialState, action) => {
     case HOME_PAGE_LOAD:
       return {
         ...state,
-        displayHome: action.payload,
+        isHomePage: action.payload,
       };
     default:
       return state;
