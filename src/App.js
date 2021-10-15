@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Header from "./components/organism/Header";
 import Footer from "./components/organism/Footer";
@@ -8,9 +9,11 @@ import Person from "./components/pages/Person";
 import style from "./style.module.scss";
 
 function App() {
+  const displayHome = useSelector((state) => state.services.displayHome);
+  const wrapperStyle = displayHome ? style.wrapperHome : style.wrapper;
   return (
     <div className={style.body}>
-      <div className={style.wrapper}>
+      <div className={wrapperStyle}>
         <BrowserRouter>
           <div className={style.header}>
             <Header />
@@ -28,4 +31,3 @@ function App() {
 }
 
 export default App;
-// Все равно не понимаю, я ведь все это делаю уже внутри футера и хидера? Зачем лишние оболочки?

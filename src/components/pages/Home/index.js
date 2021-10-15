@@ -1,14 +1,13 @@
-import React from "react";
-// import photo from "../../../assets/img/home.webp";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { displayHome } from "../../../store/actions/services";
 import style from "./style.module.scss";
 
 const Home = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {dispatch(displayHome(true))});
   return (
-    // <div className={style.container}>
-    <div className={style.image}>
-      {/* <img className={style.image} src={photo} alt="Breaking Bad" /> */}
-    </div>
-    // </div>
+    <div className={style.image} />
   );
 };
 
