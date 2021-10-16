@@ -11,4 +11,12 @@
       background-color: $white;
     }
   }
+  .wrapperHome {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    .header {
+      background-color: $white;
+    }
+  }
 }
