@@ -23,8 +23,9 @@ export const loadQuoteElement = (quote) => {
 };
 
 export const loadPersonList = () => async (dispatch) => {
+  const link = "https://www.breakingbadapi.com/api/characters?limit=10";
   dispatch(loadInProgress(true));
-  const { value, error } = await Repository.APICardsList.createCardList();
+  const { value, error } = await Repository.API.createAPI(link);
   if (error || !value) {
     dispatch(loadingError(error));
   }
@@ -32,19 +33,20 @@ export const loadPersonList = () => async (dispatch) => {
   dispatch(loadInProgress(false));
 };
 
-export const loadQuote = (character) => async (dispatch) => {
+export const loadQuote = () => async (dispatch, callData) => {
+  const link = `https://www.breakingbadapi.com/api/quote/random?author=${callData.replace(
+    " ",
+    "+"
+  )}`;
   dispatch(loadInProgress(true));
-  const { value, error } = await Repository.APIQuote.createQuote(
-    character.name
-  );
+  const { value, error } = await Repository.APIQuote.createAPI(link);
   if (error) {
     dispatch(loadingError(true));
   }
   if (value.length !== 0) {
     dispatch(loadQuoteElement(value[0].quote));
-  }
-  else {
-    dispatch(loadQuoteElement('Any quotes are missing for this character.'))
+  } else {
+    dispatch(loadQuoteElement("Any quotes are missing for this character."));
   }
   dispatch(loadInProgress(false));
 };

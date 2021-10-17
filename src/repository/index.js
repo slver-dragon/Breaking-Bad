@@ -1,9 +1,7 @@
-import CardList from "./CardList";
-import Quote from "./Quote";
+import CallAPI from "./CallAPI"
 
 class Reposirory {
-  APICardsList = CardList;
-  APIQuote = Quote;
+  API = CallAPI;
 }
 
 export default new Reposirory();
