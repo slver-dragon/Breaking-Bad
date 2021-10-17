@@ -1,11 +1,10 @@
 import React from "react";
 import style from "./style.module.scss";
+import Error from "../../atom/Error";
+import Loader from "../../atom/Loader";
 
 let statusStyle = "";
-let quote =
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non, aliquam laoreet vivamus sed. Diam fames mi, quam tellus cursus volutpat velit massa.";
-
-const PersonSheet = ({ character }) => {
+const PersonSheet = ({ character, randomQuote, isLoading, errorValue }) => {
   switch (character.status) {
     case "Alive": {
       statusStyle = style.alive;
@@ -25,7 +24,11 @@ const PersonSheet = ({ character }) => {
 
   return (
     <div className={style.wrapper}>
-      <div className={style.main}>
+      {errorValue ? (
+        <Error textError={"Ошибка загрузки данных: " + errorValue} />
+      ) : !isLoading ? (
+        <div className={style.wrapper}>
+          <div className={style.main}>
         <div className={style.photoWrapper}>
           <img
             className={style.photo}
@@ -45,10 +48,15 @@ const PersonSheet = ({ character }) => {
             <span className={style.nickname}>{character.nickname} </span>
           </p>
           <p className={style.quoteMargin}>
-            Цитата: <span className={style.quote}>{quote} </span>
+            Цитата: <span className={style.quote}>{randomQuote} </span>
           </p>
         </div>
-      </div>
+      </div>  
+        </div>
+      ) : (
+        <Loader />
+      )}
+      
     </div>
   );
 };

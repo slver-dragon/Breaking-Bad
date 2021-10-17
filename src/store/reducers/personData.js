@@ -7,6 +7,7 @@ import {
 
 export const initialState = {
   characters: [],
+  randomQuote: "",
   isLoad: false,
   errorValue: "",
 };
@@ -31,7 +32,7 @@ const personData = (state = initialState, action) => {
     case GET_QUOTE:
       return {
         ...state,
-        currentPerson: action.payload,
+        randomQuote: action.payload,
       };
     default:
       return state;
