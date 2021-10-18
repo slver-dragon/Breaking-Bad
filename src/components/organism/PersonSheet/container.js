@@ -13,16 +13,11 @@ export const PersonSheetContainer = () => {
   let character = "";
   const { id } = useParams();
   const characters = useSelector((state) => state.personData.characters);
-  for (let i = 0; i < characters.length; i++) {
-    if (String(characters[i].char_id) === id) {
-      character = characters[i];
-      break;
-    }
-  }
+
+  character = characters.find((item) => String(item.char_id) === id);
   useEffect(() => {
     dispatch(loadQuote(character));
-  }, [dispatch,character]);
-  randomQuote = randomQuote ? randomQuote : 'Any quotes are missing for this character.';
+  }, [dispatch, character]);
   return (
     <div>
       {character ? (

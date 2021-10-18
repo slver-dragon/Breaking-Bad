@@ -24,7 +24,7 @@ export const loadQuoteElement = (quote) => {
 
 export const loadPersonList = () => async (dispatch) => {
   dispatch(loadInProgress(true));
-  const { value, error } = await Repository.APICardsList.createCardList();
+  const { value, error } = await Repository.APIPersonList.getPersonList();
   if (error || !value) {
     dispatch(loadingError(error));
   }
@@ -34,13 +34,13 @@ export const loadPersonList = () => async (dispatch) => {
 
 export const loadQuote = (character) => async (dispatch) => {
   dispatch(loadInProgress(true));
-  const { value, error } = await Repository.APIQuote.createQuote(
+  const { value, error } = await Repository.APIQuote.getQuote(
     character.name
   );
   if (error) {
     dispatch(loadingError(true));
   }
-  if (value.length !== 0) {
+  if (value.length) {
     dispatch(loadQuoteElement(value[0].quote));
   }
   else {

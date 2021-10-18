@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export class Quote {
-  createQuote = async (character) => {
+  getQuote = async (character) => {
     let result = {
       value: null,
       error: null,

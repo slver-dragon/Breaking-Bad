@@ -5,16 +5,18 @@ import Error from "../../atom/Error";
 import style from "./style.module.scss";
 
 const CardList = ({ characters, isLoading, errorValue }) => {
-  const listItem = !errorValue ? characters.map((character) => (
-    <PersonCard
-      key={character.char_id}
-      name={character.name}
-      birthday={character.birthday}
-      img={character.img}
-      status={character.status}
-      id={character.char_id}
-    />
-  )) : ('');
+  const listItem = !errorValue
+    ? characters.map((character) => (
+        <PersonCard
+          key={character.char_id}
+          name={character.name}
+          birthday={character.birthday}
+          img={character.img}
+          status={character.status}
+          id={character.char_id}
+        />
+      ))
+    : "";
 
   return (
     <div>

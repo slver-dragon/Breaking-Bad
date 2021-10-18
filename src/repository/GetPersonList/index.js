@@ -1,7 +1,7 @@
 import axios from "axios";
 
-class CardList {
-  createCardList = async () => {
+class PersonList {
+  getPersonList = async () => {
     let result = {
       value: null,
       error: null,
@@ -18,4 +18,4 @@ class CardList {
   };
 }
 
-export default new CardList();
+export default new PersonList();
