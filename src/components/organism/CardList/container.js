@@ -10,7 +10,7 @@ const PersonListContainer = () => {
   const errorValue = useSelector((state) => state.personData.isError);
 
   useEffect(() => {
-    dispatch(loadPersonList(''));
+    dispatch(loadPersonList());
   }, [dispatch]);
 
   return <CardList characters={characters} isLoading={isLoading} errorValue={errorValue} />;
