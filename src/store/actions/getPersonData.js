@@ -34,10 +34,12 @@ export const loadPersonList = () => async (dispatch) => {
 };
 
 export const loadQuote = (callData) => async (dispatch) => {
+  console.log(callData);
   const link = `https://www.breakingbadapi.com/api/quote/random?author=${callData.replace(
     " ",
     "+"
   )}`;
+  console.log(link);
   dispatch(loadInProgress(true));
   const { value, error } = await Repository.API.createAPI(link);
   if (error) {
