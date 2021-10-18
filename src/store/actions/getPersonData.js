@@ -24,7 +24,7 @@ export const loadQuoteElement = (quote) => {
 
 export const loadPersonList = () => async (dispatch) => {
   dispatch(loadInProgress(true));
-  const { value, error } = await Repository.APICardsList.createCardList();
+  const { value, error } = await Repository.APIPersonList.getPersonList();
   if (error || !value) {
     dispatch(loadingError(error));
   }
@@ -32,12 +32,19 @@ export const loadPersonList = () => async (dispatch) => {
   dispatch(loadInProgress(false));
 };
 
-export const loadQuote = () => async (dispatch) => {
+export const loadQuote = (character) => async (dispatch) => {
   dispatch(loadInProgress(true));
-  const { value, error } = await Repository.APIQuote.createQuote();
-  if (error || !value) {
+  const { value, error } = await Repository.APIQuote.getQuote(
+    character.name
+  );
+  if (error) {
     dispatch(loadingError(true));
   }
-  dispatch(loadQuoteElement(value));
+  if (value.length) {
+    dispatch(loadQuoteElement(value[0].quote));
+  }
+  else {
+    dispatch(loadQuoteElement('Any quotes are missing for this character.'))
+  }
   dispatch(loadInProgress(false));
 };
