@@ -20,7 +20,7 @@ export const PersonSheetContainer = () => {
     }
   }
   useEffect(() => {
-    dispatch(loadQuote(character)); 
+    dispatch(loadQuote(character));
   }, [dispatch,character]);
   randomQuote = randomQuote ? randomQuote : 'Any quotes are missing for this character.';
   return (

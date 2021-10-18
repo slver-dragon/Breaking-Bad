@@ -1,11 +1,13 @@
 import axios from "axios";
 
-export class CallAPI {
-  createAPI = async (link) => {
+export class Quote {
+  createQuote = async (character) => {
     let result = {
       value: null,
       error: null,
     };
+    character = character.replace(' ','+');
+    const link = `https://www.breakingbadapi.com/api/quote/random?author=${character}`;
     try {
       const response = await axios.get(link);
       result.value = response.data;
@@ -16,4 +18,4 @@ export class CallAPI {
   };
 }
 
-export default new CallAPI();
+export default new Quote();
