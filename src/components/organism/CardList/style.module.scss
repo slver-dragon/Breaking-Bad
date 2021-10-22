@@ -1,9 +1,46 @@
 @import "../../../assets/styles/style";
-
-.wrapper {
-  display: grid;
-  @include cardListWrapperGrid;
-  column-gap: 2rem;
-  justify-content: space-between;
+.main {
+  display: flex;
+  flex-direction: column;
+  .titleMenu {
+    display: grid;
+    margin: 1.5rem 0 2rem;
+    @include mediumFont;
+    font-size: 0.875rem;
+    .status {
+      @include titleStatus;
+    }
+    .name {
+      @include titleName;
+    }
+    .birthday {
+      @include titleBirthday;
+    }
+  }
+  .changer {
+    display: inline-flex;
+    justify-content: space-between;
+    span {
+      @include personPageBigFont;
+    }
+    .buttonBlock {
+      display: flex;
+      justify-content: center;
+    }
+  }
   @include mainContainer;
+
+  .wrapperGrid {
+    display: grid;
+    column-gap: 2rem;
+    justify-content: space-between;
+    @include cardListWrapperGrid;
+  }
+  .wrapperList {
+    display: flex;
+    flex-direction: column;
+  }
+  .divider {
+    border: 0.0625rem solid $gray;
+  }
 }

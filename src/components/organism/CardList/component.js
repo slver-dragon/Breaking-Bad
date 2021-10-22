@@ -1,29 +1,49 @@
 import React from "react";
-import PersonCard from "../../molecule/PersonCard";
+import PersonCardGrid from "../../molecule/PersonCardGrid";
+import PersonCardList from "../../molecule/PersonCardList";
 import Loader from "../../atom/Loader";
 import Error from "../../atom/Error";
 import style from "./style.module.scss";
 
-const CardList = ({ characters, isLoading, errorValue }) => {
-  const listItem = !errorValue
-    ? characters.map((character) => (
-        <PersonCard
-          key={character.char_id}
-          name={character.name}
-          birthday={character.birthday}
-          img={character.img}
-          status={character.status}
-          id={character.char_id}
-        />
-      ))
-    : "";
+const CardList = ({ characters, isLoading, errorValue, isCardsList }) => {
+  let listItem = "";
+  if (isCardsList) {
+    listItem = !errorValue
+      ? characters.map((character) => (
+          <PersonCardList
+            key={character.char_id}
+            name={character.name}
+            birthday={character.birthday}
+            img={character.img}
+            status={character.status}
+            id={character.char_id}
+          />
+        ))
+      : "";
+  } else {
+    listItem = !errorValue
+      ? characters.map((character) => (
+          <PersonCardGrid
+            key={character.char_id}
+            name={character.name}
+            birthday={character.birthday}
+            img={character.img}
+            status={character.status}
+            id={character.char_id}
+          />
+        ))
+      : "";
+  }
+  const styleCatalog = isCardsList ? style.wrapperList : style.wrapperGrid;
 
   return (
     <div>
       {errorValue ? (
         <Error textError={"Ошибка загрузки данных: " + errorValue} />
       ) : !isLoading ? (
-        <div className={style.wrapper}>{listItem}</div>
+        <div className={styleCatalog}>
+          {listItem}
+        </div>
       ) : (
         <Loader />
       )}

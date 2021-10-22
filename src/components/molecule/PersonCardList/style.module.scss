@@ -1,0 +1,51 @@
+@import "../../../assets/styles/style";
+
+.container {
+  border-top: 0.125rem solid $gray;
+  border-bottom: 0.125rem solid $gray;
+  .main {
+    display: flex;
+    @include standarFont;
+    margin: 0.75rem 0;
+    text-decoration: none;
+    .photoWrapper {
+      max-width: 4rem;
+      max-height: 4rem;
+      object-fit: cover;
+      margin-right: 4%;
+      overflow-y: hidden;
+      overflow-x: hidden;
+      .photo {
+        max-width: 4rem;
+        height: auto;
+      }
+    }
+    .inform {
+      display: flex;
+      align-items: center;
+      .state {
+        position: relative;
+        padding: 0.5rem 0.75rem;
+        margin: 1rem 0 0.75rem;
+      }
+      .alive {
+        @include stateOnColor;
+      }
+      .deceased {
+        @include stateOffColor;
+      }
+      .presumedDead {
+        @include statePDColor;
+      }
+      .name {
+        @include mediumFont;
+        color: $black;
+        @include personCardName;
+      }
+      .birthday {
+        color: $gray;
+        @include personCardBirthday;
+      }
+    }
+  }
+}

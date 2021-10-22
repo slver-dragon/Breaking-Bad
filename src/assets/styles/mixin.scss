@@ -17,6 +17,7 @@
 @mixin personPageBigFont {
   font-family: $mainFontFamily;
   font-size: 2rem;
+  font-weight: 500;
 }
 @mixin stateOnColor {
   color: $stateOn;
@@ -46,12 +47,22 @@
   }
 }
 @mixin small-screen {
-  @media (max-width: $mobile) {
+  @media (max-width: $small-screen) {
     @content;
   }
 }
 @mixin small-laptop {
-  @media (max-width: $mobile) {
+  @media (max-width: $small-laptop) {
+    @content;
+  }
+}
+@mixin laptop {
+  @media (max-width: $laptop) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (max-width: $desktop) {
     @content;
   }
 }
@@ -111,6 +122,74 @@
   }
   @include small-mobile {
     grid-template-columns: 1fr;
+  }
+}
+@mixin titleStatus {
+  position: absolute;
+  left: 20vw;
+  @include desktop {
+    left: 25vw;
+  }
+  @include laptop {
+    left: 17vw;
+  }
+  @include small-laptop {
+    left: 17vw;
+  }
+  @include small-screen {
+    left: 25vw;
+  }
+  @include tablet {
+    left: 15vw;
+  }
+  @include mobile {
+    left: 20vw;
+  }
+}
+@mixin titleName {
+  position: absolute;
+  left: 35vw;
+  @include small-screen {
+    left: 45vw;
+  }
+  @include tablet {
+    left: 40vw;
+  }
+  @include mobile {
+    left: 52vw;
+  }
+}
+@mixin titleBirthday {
+  position: absolute;
+  left: 50vw;
+  @include small-screen {
+    left: 60vw;
+  }
+  @include mobile {
+    left: 72vw;
+  }
+}
+@mixin personCardBirthday {
+  position: absolute;
+  left: 50vw;
+  @include small-screen {
+    left: 60vw;
+  }
+  @include mobile {
+    left: 80vw;
+  }
+}
+@mixin personCardName {
+  position: absolute;
+  left: 35vw;
+  @include small-screen {
+    left: 42vw;
+  }
+  @include tablet {
+    left: 37vw;
+  }
+  @include mobile {
+    left: 50vw;
   }
 }
 $desktop: 1920px;

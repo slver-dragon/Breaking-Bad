@@ -18,21 +18,25 @@ const PersonCard = ({ name, birthday, img, status, id }) => {
       statusStyle = style.presumedDead;
     }
   }
+
   const statusElement = (
     <p className={style.state + " " + statusStyle}>{status}</p>
   );
 
   return (
-    <Link to={`/person/${id}`} className={style.main}>
-      <div className={style.photoWrapper}>
-        <img className={style.photo} src={img} alt={name} />
-      </div>
-      <div className={style.inform}>
-        {statusElement}
-        <p className={style.name}>{name}</p>
-        <p className={style.birthday}>{birthday} </p>
-      </div>
-    </Link>
+    <div className={style.container}>
+      <Link to={`/person/${id}`} className={style.main}>
+        <div className={style.photoWrapper}>
+          <img className={style.photo} src={img} alt={name} />
+        </div>
+        <div className={style.inform}>
+          {statusElement}
+          <span className={style.name}>{name}</span>
+          <span className={style.birthday}>{birthday} </span>
+        </div>
+      </Link>
+      <div className={style.divider} />
+    </div>
   );
 };
 
