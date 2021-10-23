@@ -3,10 +3,14 @@
   display: flex;
   flex-direction: column;
   .titleMenu {
-    display: grid;
+    display: flex;
+    align-items: center;
     margin: 1.5rem 0 2rem;
     @include mediumFont;
     font-size: 0.875rem;
+    span {
+      margin: 0 auto;
+    }
     .status {
       @include titleStatus;
     }
@@ -15,6 +19,7 @@
     }
     .birthday {
       @include titleBirthday;
+      margin: 0 auto;
     }
   }
   .changer {
@@ -41,6 +46,6 @@
     flex-direction: column;
   }
   .divider {
-    border: 0.0625rem solid $gray;
+    border-top: 0.0625rem solid $gray;
   }
 }

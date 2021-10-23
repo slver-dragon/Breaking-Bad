@@ -1,8 +1,7 @@
 @import "../../../assets/styles/style";
 
 .container {
-  border-top: 0.125rem solid $gray;
-  border-bottom: 0.125rem solid $gray;
+  border-top: 0.0625rem solid $gray;
   .main {
     display: flex;
     @include standarFont;
@@ -23,6 +22,7 @@
     .inform {
       display: flex;
       align-items: center;
+      @include mediumFont;
       .state {
         position: relative;
         padding: 0.5rem 0.75rem;
@@ -36,9 +36,9 @@
       }
       .presumedDead {
         @include statePDColor;
+        @include statusWrap;
       }
       .name {
-        @include mediumFont;
         color: $black;
         @include personCardName;
       }

@@ -19,10 +19,6 @@ const PersonCard = ({ name, birthday, img, status, id }) => {
     }
   }
 
-  const statusElement = (
-    <p className={style.state + " " + statusStyle}>{status}</p>
-  );
-
   return (
     <div className={style.container}>
       <Link to={`/person/${id}`} className={style.main}>
@@ -30,12 +26,11 @@ const PersonCard = ({ name, birthday, img, status, id }) => {
           <img className={style.photo} src={img} alt={name} />
         </div>
         <div className={style.inform}>
-          {statusElement}
+          <p className={style.state + " " + statusStyle}>{status}</p>
           <span className={style.name}>{name}</span>
           <span className={style.birthday}>{birthday} </span>
         </div>
       </Link>
-      <div className={style.divider} />
     </div>
   );
 };

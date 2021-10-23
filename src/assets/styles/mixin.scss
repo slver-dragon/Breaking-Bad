@@ -78,27 +78,48 @@
   }
 }
 @mixin personSheetMain {
+  display: flex;
   margin-top: 3rem;
   @include tablet {
     margin-top: 2.5rem;
   }
   @include mobile {
-    margin-top: 2rem;
-  }
-  @include small-mobile {
+    display: block;
     margin-top: 1rem;
   }
 }
 @mixin personSheetPhotoWrapper {
+  width: 36.5rem;
+  height: 36.5rem;
+  object-fit: cover;
   margin-right: 6.4375rem;
+  overflow-y: hidden;
   @include tablet {
     margin-right: 4.2916rem;
   }
   @include mobile {
-    margin-right: 2.1458rem;
+    width: 12.17rem;
+    height: 12.17rem;
+    object-fit: cover;
+    margin: 0 auto;
   }
-  @include small-mobile {
-    margin-right: 1.0729rem;
+}
+@mixin personSheetInform {
+  color: $gray;
+  max-width: 35.96%;
+  @include mediumFont;
+  .state {
+    display: inline-block;
+    padding: 0.5rem 0.75rem;
+    margin: 0 0 2rem;
+  }
+  @include mobile {
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    .state {
+      margin-top: 1rem;
+    }
   }
 }
 @mixin headerMain {
@@ -143,7 +164,7 @@
     left: 15vw;
   }
   @include mobile {
-    left: 20vw;
+    left: 25vw;
   }
 }
 @mixin titleName {
@@ -153,10 +174,10 @@
     left: 45vw;
   }
   @include tablet {
-    left: 40vw;
+    left: 45vw;
   }
   @include mobile {
-    left: 52vw;
+    left: 54vw;
   }
 }
 @mixin titleBirthday {
@@ -164,6 +185,9 @@
   left: 50vw;
   @include small-screen {
     left: 60vw;
+  }
+  @include tablet {
+    left: 67vw;
   }
   @include mobile {
     left: 72vw;
@@ -175,6 +199,9 @@
   @include small-screen {
     left: 60vw;
   }
+  @include tablet {
+    left: 70vw;
+  }
   @include mobile {
     left: 80vw;
   }
@@ -183,13 +210,24 @@
   position: absolute;
   left: 35vw;
   @include small-screen {
-    left: 42vw;
+    left: 45vw;
   }
   @include tablet {
-    left: 37vw;
+    left: 42vw;
   }
   @include mobile {
-    left: 50vw;
+    left: 54vw;
+    max-width: 10%;
+  }
+}
+@mixin statusWrap {
+  @include tablet {
+    max-width: 55%;
+    padding: 0.5rem;
+  }
+  @include mobile {
+    padding: 0.5rem 0.3rem;
+    margin-left: 0;
   }
 }
 $desktop: 1920px;

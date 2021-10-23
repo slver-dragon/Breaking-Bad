@@ -48,7 +48,6 @@ const PersonListContainer = () => {
         </div>
       </div>
       {titleMenu}
-      {divider}
       <CardList
         characters={characters}
         isLoading={isLoading}

@@ -16,7 +16,7 @@ export const PersonSheetContainer = () => {
 
   character = characters.find((item) => String(item.char_id) === id);
   useEffect(() => {
-    dispatch(loadQuote(character));
+    if (character) dispatch(loadQuote(character));
   }, [dispatch, character]);
   return (
     <div>
@@ -28,7 +28,7 @@ export const PersonSheetContainer = () => {
           errorValue={errorValue}
         />
       ) : (
-        <Error textError={"Отсутствие данных персонажа."} />
+        <Error textError={"Некорректный переход.\nПожалуйста, осуществляйте переходы корректно."} />
       )}
     </div>
   );

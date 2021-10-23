@@ -1,28 +1,16 @@
 @import "../../../assets/styles/style";
 
 .main {
-  display: flex;
   @include personSheetMain;
   .photoWrapper {
-    width: 36.5rem;
-    height: 36.5rem;
-    object-fit: cover;
     @include personSheetPhotoWrapper;
-    overflow-y: hidden;
     .photo {
       width: 100%;
       height: auto;
     }
   }
   .inform {
-    color: $gray;
-    max-width: 35.96%;
-    @include mediumFont;
-    .state {
-      display: inline-block;
-      padding: 0.5rem 0.75rem;
-      margin: 0rem 0 2rem;
-    }
+    @include personSheetInform;
     .alive {
       @include stateOnColor;
     }
@@ -47,32 +35,6 @@
     }
     p {
       margin-bottom: 1rem;
-    }
-  }
-}
-
-@mixin personSheetMain {
-  margin-top: 3rem;
-}
-@mixin personSheetPhotoWrapper {
-  margin-right: 6.4375rem;
-}
-
-@media (max-width: 320px) {
-  .main {
-    display: block;
-    .photoWrapper {
-      width: 12.17rem;
-      height: 12.17rem;
-      object-fit: cover;
-    }
-    .inform {
-      max-width: 80%;
-      margin-left: auto;
-      margin-right: auto;
-      .state {
-        margin-top: 1rem;
-      }
     }
   }
 }
