@@ -3,7 +3,6 @@ import {
   LOADING_ERROR,
   LOADING_IN_PROGRESS,
   GET_QUOTE,
-  STORE_IN_LOCALSTORAGE,
 } from "../actionTypes/getPersonData";
 import Repository from "../../repository";
 
@@ -48,8 +47,4 @@ export const loadQuote = (character) => async (dispatch) => {
     dispatch(loadQuoteElement('Any quotes are missing for this character.'))
   }
   dispatch(loadInProgress(false));
-};
-
-export const storeInLocalStorage = () => {
-  return { type: STORE_IN_LOCALSTORAGE, payload: JSON.parse(localStorage.getItem('characters')) };
 };
