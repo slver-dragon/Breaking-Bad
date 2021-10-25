@@ -3,6 +3,7 @@ import {
   LOADING_ERROR,
   LOADING_IN_PROGRESS,
   GET_QUOTE,
+  STORE_IN_LOCALSTORAGE,
 } from "../actionTypes/getPersonData";
 
 export const initialState = {
@@ -34,6 +35,11 @@ const personData = (state = initialState, action) => {
         ...state,
         randomQuote: action.payload,
       };
+    case STORE_IN_LOCALSTORAGE:
+      return {
+        ...state,
+        characters: action.payload,
+      }
     default:
       return state;
   }

@@ -33,6 +33,7 @@ const PersonListContainer = () => {
   useEffect(() => {
     dispatch(loadPersonList());
   }, [dispatch]);
+  localStorage.setItem('characters',JSON.stringify(characters));
 
   return (
     <div className={style.main}>

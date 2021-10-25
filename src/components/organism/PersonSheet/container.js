@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
-import { loadQuote } from "../../../store/actions/getPersonData";
+import { loadQuote, storeInLocalStorage } from "../../../store/actions/getPersonData";
 import Error from "../../atom/Error";
 import PersonSheet from "./component";
 
@@ -12,7 +12,16 @@ export const PersonSheetContainer = () => {
   const errorValue = useSelector((state) => state.personData.isError);
   let character = "";
   const { id } = useParams();
+
+  const baseMount =
+    JSON.parse(localStorage.getItem("characters")).length !==
+    useSelector((state) => state.personData.characters).length;
+  useEffect(() => {
+    if (baseMount) dispatch(storeInLocalStorage());
+  }, [dispatch, baseMount]);
   const characters = useSelector((state) => state.personData.characters);
+
+  console.log(characters);
 
   character = characters.find((item) => String(item.char_id) === id);
   useEffect(() => {
@@ -28,7 +37,11 @@ export const PersonSheetContainer = () => {
           errorValue={errorValue}
         />
       ) : (
-        <Error textError={"Некорректный переход.\nПожалуйста, осуществляйте переходы корректно."} />
+        <Error
+          textError={
+            "Некорректный переход.\nПожалуйста, осуществляйте переходы корректно."
+          }
+        />
       )}
     </div>
   );
