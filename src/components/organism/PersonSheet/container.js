@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
-import { loadQuote } from "../../../store/actions/getPersonData";
+import { loadPerson, loadQuote } from "../../../store/actions/getPersonData";
 import Error from "../../atom/Error";
 import PersonSheet from "./component";
 
@@ -10,16 +10,16 @@ export const PersonSheetContainer = () => {
   let randomQuote = useSelector((state) => state.personData.randomQuote);
   const isLoading = useSelector((state) => state.personData.isLoad);
   const errorValue = useSelector((state) => state.personData.isError);
-  let character = "";
   const { id } = useParams();
-  const characters = useSelector((state) => state.personData.characters);
 
-console.log(characters);
-
-  character = characters.find((item) => String(item.char_id) === id);
   useEffect(() => {
-    if (character) dispatch(loadQuote(character));
+    dispatch(loadPerson(id));
+  }, [dispatch, id]);
+const character = useSelector((state) => state.personData.character);
+  useEffect(() => {
+    if (character.name) dispatch(loadQuote(character));
   }, [dispatch, character]);
+
   return (
     <div>
       {character ? (

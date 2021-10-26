@@ -10,7 +10,6 @@ import style from "./style.module.scss";
 const Person = () => {
   const dispatch = useDispatch();
   useEffect(() => {dispatch(displayHome(false))});
-
   return (
     <div className={style.body}>
       <div className={style.main}>

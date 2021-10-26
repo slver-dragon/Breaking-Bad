@@ -29,11 +29,9 @@ const PersonListContainer = () => {
     ""
   );
   const divider = isCardsList ? (<div className={style.divider} />) : '';
-
   useEffect(() => {
     dispatch(loadPersonList());
   }, [dispatch]);
-  localStorage.setItem('characters',JSON.stringify(characters));
 
   return (
     <div className={style.main}>

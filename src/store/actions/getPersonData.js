@@ -1,13 +1,18 @@
 import {
-  LOAD_PERSON,
+  GET_PERSON,
+  GET_PERSON_LIST,
   LOADING_ERROR,
   LOADING_IN_PROGRESS,
   GET_QUOTE,
 } from "../actionTypes/getPersonData";
 import Repository from "../../repository";
 
-export const loadPerson = (value) => {
-  return { type: LOAD_PERSON, payload: value };
+export const getPerson = (value) => {
+  return { type: GET_PERSON, payload: value };
+};
+
+export const getPersonList = (value) => {
+  return { type: GET_PERSON_LIST, payload: value };
 };
 
 export const loadingError = (value) => {
@@ -28,7 +33,17 @@ export const loadPersonList = () => async (dispatch) => {
   if (error || !value) {
     dispatch(loadingError(error));
   }
-  dispatch(loadPerson(value));
+  dispatch(getPersonList(value));
+  dispatch(loadInProgress(false));
+};
+
+export const loadPerson = (id) => async (dispatch) => {
+  dispatch(loadInProgress(true));
+  const { value, error } = await Repository.APIPerson.getPerson(id);
+  if (error || !value) {
+    dispatch(loadingError(error));
+  }
+  dispatch(getPerson(value[0]));
   dispatch(loadInProgress(false));
 };
 
