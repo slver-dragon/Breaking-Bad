@@ -15,7 +15,7 @@ export const PersonSheetContainer = () => {
   useEffect(() => {
     dispatch(loadPerson(id));
   }, [dispatch, id]);
-const character = useSelector((state) => state.personData.character);
+  const character = useSelector((state) => state.personData.character);
   useEffect(() => {
     if (character.name) dispatch(loadQuote(character));
   }, [dispatch, character]);
