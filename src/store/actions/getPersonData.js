@@ -48,3 +48,4 @@ export const loadQuote = (character) => async (dispatch) => {
   }
   dispatch(loadInProgress(false));
 };
+
