@@ -35,16 +35,14 @@ const CardList = ({ characters, isLoading, errorValue, isCardsList }) => {
           />
         ))
       : "";
-  };
+  }
 
   return (
     <div>
       {errorValue ? (
         <Error textError={"Ошибка загрузки данных: " + errorValue} />
       ) : !isLoading ? (
-        <div className={styleCatalog}>
-          {listItem}
-        </div>
+        <div className={styleCatalog}>{listItem}</div>
       ) : (
         <Loader />
       )}

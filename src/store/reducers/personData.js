@@ -16,17 +16,17 @@ export const initialState = {
 
 const personData = (state = initialState, action) => {
   switch (action.type) {
+    case GET_PERSON_LIST:
+      return {
+        ...state,
+        characters: action.payload,
+      };
     case GET_PERSON:
       return {
         ...state,
         character: action.payload,
       };
-      case GET_PERSON_LIST:
-      return {
-        ...state,
-        characters: action.payload,
-      };
-      case GET_QUOTE:
+    case GET_QUOTE:
       return {
         ...state,
         randomQuote: action.payload,

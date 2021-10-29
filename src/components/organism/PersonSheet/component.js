@@ -29,34 +29,33 @@ const PersonSheet = ({ character, randomQuote, isLoading, errorValue }) => {
       ) : !isLoading ? (
         <div className={style.wrapper}>
           <div className={style.main}>
-        <div className={style.photoWrapper}>
-          <img
-            className={style.photo}
-            src={character.img}
-            alt={character.name}
-          />
-        </div>
-        <div className={style.inform}>
-          {statusElement}
-          <p className={style.name}>{character.name}</p>
-          <p>
-            Дата рождения:{" "}
-            <span className={style.birthday}>{character.birthday} </span>
-          </p>
-          <p>
-            Ник-нейм:{" "}
-            <span className={style.nickname}>{character.nickname} </span>
-          </p>
-          <p className={style.quoteMargin}>
-            Цитата: <span className={style.quote}>{randomQuote} </span>
-          </p>
-        </div>
-      </div>  
+            <div className={style.photoWrapper}>
+              <img
+                className={style.photo}
+                src={character.img}
+                alt={character.name}
+              />
+            </div>
+            <div className={style.inform}>
+              {statusElement}
+              <p className={style.name}>{character.name}</p>
+              <p>
+                Дата рождения:{" "}
+                <span className={style.birthday}>{character.birthday} </span>
+              </p>
+              <p>
+                Ник-нейм:{" "}
+                <span className={style.nickname}>{character.nickname} </span>
+              </p>
+              <p className={style.quoteMargin}>
+                Цитата: <span className={style.quote}>{randomQuote} </span>
+              </p>
+            </div>
+          </div>
         </div>
       ) : (
         <Loader />
       )}
-      
     </div>
   );
 };

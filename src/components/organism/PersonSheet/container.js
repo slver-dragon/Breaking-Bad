@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
-import { loadPerson, loadQuote } from "../../../store/actions/getPersonData";
+import { loadPersons, loadQuote } from "../../../store/actions/getPersonData";
 import Error from "../../atom/Error";
+import Loader from "../../atom/Loader";
 import PersonSheet from "./component";
 
 export const PersonSheetContainer = () => {
@@ -11,14 +12,22 @@ export const PersonSheetContainer = () => {
   const isLoading = useSelector((state) => state.personData.isLoad);
   const errorValue = useSelector((state) => state.personData.isError);
   const { id } = useParams();
-
-  useEffect(() => {
-    dispatch(loadPerson(id));
-  }, [dispatch, id]);
+  useEffect(
+    () => {
+      dispatch(loadPersons(id - 1, 1, false));
+    },
+    // eslint-disable-next-line
+    []
+  );
   const character = useSelector((state) => state.personData.character);
-  useEffect(() => {
-    if (character.name) dispatch(loadQuote(character));
-  }, [dispatch, character]);
+  console.log(id, character);
+  useEffect(
+    () => {
+      if (character.name) dispatch(loadQuote(character));
+    },
+    // eslint-disable-next-line
+    []
+  );
 
   return (
     <div>
@@ -29,12 +38,10 @@ export const PersonSheetContainer = () => {
           isLoading={isLoading}
           errorValue={errorValue}
         />
+      ) : character ? (
+        <Loader />
       ) : (
-        <Error
-          textError={
-            "Некорректный переход.\nПожалуйста, осуществляйте переходы корректно."
-          }
-        />
+        <Error textError="Не удалось получить данные персонажа!" />
       )}
     </div>
   );

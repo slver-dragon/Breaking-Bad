@@ -2,26 +2,7 @@
 .main {
   display: flex;
   flex-direction: column;
-  .titleMenu {
-    display: flex;
-    align-items: center;
-    margin: 1.5rem 0 2rem;
-    @include mediumFont;
-    font-size: 0.875rem;
-    span {
-      margin: 0 auto;
-    }
-    .status {
-      @include titleStatus;
-    }
-    .name {
-      @include titleName;
-    }
-    .birthday {
-      @include titleBirthday;
-      margin: 0 auto;
-    }
-  }
+  @include mainContainer;
   .changer {
     display: inline-flex;
     justify-content: space-between;
@@ -33,8 +14,26 @@
       justify-content: center;
     }
   }
-  @include mainContainer;
-
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    .pictureCap {
+      padding: 0 2rem;
+    }
+    .titleMenu {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      align-items: center;
+      justify-content: space-around;
+      margin: 1.5rem 0 2rem;
+      @include mediumFont;
+      font-size: 0.875rem;
+      flex: 1 1 auto;
+      span {
+        margin: 0 auto;
+      }
+    }
+  }
   .wrapperGrid {
     display: grid;
     column-gap: 2rem;

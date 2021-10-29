@@ -89,24 +89,17 @@
   }
 }
 @mixin personSheetPhotoWrapper {
-  width: 36.5rem;
-  height: 36.5rem;
+  width: 45vw;
   object-fit: cover;
-  margin-right: 6.4375rem;
-  overflow-y: hidden;
-  @include tablet {
-    margin-right: 4.2916rem;
-  }
+  margin-right: 5vw;
   @include mobile {
-    width: 12.17rem;
-    height: 12.17rem;
     object-fit: cover;
     margin: 0 auto;
   }
 }
 @mixin personSheetInform {
   color: $gray;
-  max-width: 35.96%;
+  max-width: 25rem;
   @include mediumFont;
   .state {
     display: inline-block;
@@ -114,9 +107,7 @@
     margin: 0 0 2rem;
   }
   @include mobile {
-    max-width: 80%;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
     .state {
       margin-top: 1rem;
     }
@@ -143,91 +134,6 @@
   }
   @include small-mobile {
     grid-template-columns: 1fr;
-  }
-}
-@mixin titleStatus {
-  position: absolute;
-  left: 20vw;
-  @include desktop {
-    left: 25vw;
-  }
-  @include laptop {
-    left: 17vw;
-  }
-  @include small-laptop {
-    left: 17vw;
-  }
-  @include small-screen {
-    left: 25vw;
-  }
-  @include tablet {
-    left: 15vw;
-  }
-  @include mobile {
-    left: 25vw;
-  }
-}
-@mixin titleName {
-  position: absolute;
-  left: 35vw;
-  @include small-screen {
-    left: 45vw;
-  }
-  @include tablet {
-    left: 45vw;
-  }
-  @include mobile {
-    left: 54vw;
-  }
-}
-@mixin titleBirthday {
-  position: absolute;
-  left: 50vw;
-  @include small-screen {
-    left: 60vw;
-  }
-  @include tablet {
-    left: 67vw;
-  }
-  @include mobile {
-    left: 72vw;
-  }
-}
-@mixin personCardBirthday {
-  position: absolute;
-  left: 50vw;
-  @include small-screen {
-    left: 60vw;
-  }
-  @include tablet {
-    left: 70vw;
-  }
-  @include mobile {
-    left: 80vw;
-  }
-}
-@mixin personCardName {
-  position: absolute;
-  left: 35vw;
-  @include small-screen {
-    left: 45vw;
-  }
-  @include tablet {
-    left: 42vw;
-  }
-  @include mobile {
-    left: 54vw;
-    max-width: 10%;
-  }
-}
-@mixin statusWrap {
-  @include tablet {
-    max-width: 55%;
-    padding: 0.5rem;
-  }
-  @include mobile {
-    padding: 0.5rem 0.3rem;
-    margin-left: 0;
   }
 }
 $desktop: 1920px;
