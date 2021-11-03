@@ -33,8 +33,8 @@ const PersonListContainer = () => {
   ) : (
     ""
   );
+  console.log(window.innerWidth);
   const divider = isCardsList ? <div className={style.divider} /> : "";
-  console.log();
   useEffect(
     () => {
       dispatch(loadPersons(0, 10, true));
@@ -42,6 +42,10 @@ const PersonListContainer = () => {
     // eslint-disable-next-line
     []
   );
+  useEffect(() => {
+    if (isCardsList && window.innerWidth <= 482)
+      dispatch(changeCatalogFormat(false));
+  });
 
   return (
     <div className={style.main}>

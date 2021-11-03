@@ -14,6 +14,7 @@ export class Quote {
     } catch (error) {
       result.error = error.response;
     }
+    console.log(character,'_',result.value)
     return result;
   };
 }

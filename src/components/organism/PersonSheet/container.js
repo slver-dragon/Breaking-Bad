@@ -8,7 +8,6 @@ import PersonSheet from "./component";
 
 export const PersonSheetContainer = () => {
   const dispatch = useDispatch();
-  let randomQuote = useSelector((state) => state.personData.randomQuote);
   const isLoading = useSelector((state) => state.personData.isLoad);
   const errorValue = useSelector((state) => state.personData.isError);
   const { id } = useParams();
@@ -20,7 +19,6 @@ export const PersonSheetContainer = () => {
     []
   );
   const character = useSelector((state) => state.personData.character);
-  console.log(id, character);
   useEffect(
     () => {
       if (character.name) dispatch(loadQuote(character));
@@ -28,7 +26,8 @@ export const PersonSheetContainer = () => {
     // eslint-disable-next-line
     []
   );
-
+  const randomQuote = useSelector((state) => state.personData.randomQuote);
+  console.log(id, character, "+", randomQuote, "!");
   return (
     <div>
       {character ? (
