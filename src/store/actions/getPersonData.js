@@ -37,6 +37,7 @@ export const loadPersons = (id, quantity, isList) => async (dispatch) => {
     dispatch(getPersonList(value));
   } else {
     dispatch(getPerson(value[0]));
+    dispatch(loadQuote(value[0]));
   }
   dispatch(loadInProgress(false));
 };

@@ -6,7 +6,7 @@ export class Quote {
       value: null,
       error: null,
     };
-    character = character.replace(' ','+');
+    character = character.replace(" ", "+");
     const link = `https://www.breakingbadapi.com/api/quote/random?author=${character}`;
     try {
       const response = await axios.get(link);
@@ -14,7 +14,6 @@ export class Quote {
     } catch (error) {
       result.error = error.response;
     }
-    console.log(character,'_',result.value)
     return result;
   };
 }

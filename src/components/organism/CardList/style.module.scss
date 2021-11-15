@@ -10,8 +10,7 @@
       @include personPageBigFont;
     }
     .buttonBlock {
-      display: flex;
-      justify-content: center;
+      @include buttonBlock;
     }
   }
   .wrapper {

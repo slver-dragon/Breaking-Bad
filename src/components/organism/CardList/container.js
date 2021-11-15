@@ -15,7 +15,7 @@ const PersonListContainer = () => {
   const characters = useSelector((state) => state.personData.characters);
   const isLoading = useSelector((state) => state.personData.isLoad);
   const errorValue = useSelector((state) => state.personData.errorValue);
-  const isCardsList = useSelector((state) => state.services.isCardsList);
+  let isCardsList = useSelector((state) => state.services.isCardsList);
   const [cardsListImage, cardsGridImage] = isCardsList
     ? [cardsListOn, cardsGridOff]
     : [cardsListOff, cardsGridOn];
@@ -33,7 +33,6 @@ const PersonListContainer = () => {
   ) : (
     ""
   );
-  console.log(window.innerWidth);
   const divider = isCardsList ? <div className={style.divider} /> : "";
   useEffect(
     () => {
@@ -42,9 +41,11 @@ const PersonListContainer = () => {
     // eslint-disable-next-line
     []
   );
+
   useEffect(() => {
-    if (isCardsList && window.innerWidth <= 482)
+    if (isCardsList && window.innerWidth <= 600) {
       dispatch(changeCatalogFormat(false));
+    }
   });
 
   return (
@@ -62,6 +63,7 @@ const PersonListContainer = () => {
       </div>
       {titleMenu}
       <CardList
+        id="CardList"
         characters={characters}
         isLoading={isLoading}
         errorValue={errorValue}

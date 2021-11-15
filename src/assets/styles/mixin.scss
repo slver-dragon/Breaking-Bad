@@ -115,7 +115,7 @@
 }
 @mixin headerMain {
   padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-bottom: 2rem;
 }
 @mixin footerMain {
   padding-top: 1.75rem;
@@ -136,6 +136,14 @@
     grid-template-columns: 1fr;
   }
 }
+@mixin buttonBlock {
+  display: flex;
+  justify-content: center;
+  @media (max-width: 600px) {
+    display: none;
+  }
+}
+
 $desktop: 1920px;
 $laptop: 1440px;
 $small-laptop: 1230px;
@@ -143,3 +151,4 @@ $small-screen: 1024px;
 $tablet: 768px;
 $mobile: 482px;
 $small-mobile: 320px;
+$buttonBlockMobile: 600px;
