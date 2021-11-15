@@ -17,6 +17,7 @@
 @mixin personPageBigFont {
   font-family: $mainFontFamily;
   font-size: 2rem;
+  font-weight: 500;
 }
 @mixin stateOnColor {
   color: $stateOn;
@@ -46,12 +47,22 @@
   }
 }
 @mixin small-screen {
-  @media (max-width: $mobile) {
+  @media (max-width: $small-screen) {
     @content;
   }
 }
 @mixin small-laptop {
-  @media (max-width: $mobile) {
+  @media (max-width: $small-laptop) {
+    @content;
+  }
+}
+@mixin laptop {
+  @media (max-width: $laptop) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (max-width: $desktop) {
     @content;
   }
 }
@@ -67,32 +78,44 @@
   }
 }
 @mixin personSheetMain {
+  display: flex;
   margin-top: 3rem;
   @include tablet {
     margin-top: 2.5rem;
   }
   @include mobile {
-    margin-top: 2rem;
-  }
-  @include small-mobile {
+    display: block;
     margin-top: 1rem;
   }
 }
 @mixin personSheetPhotoWrapper {
-  margin-right: 6.4375rem;
-  @include tablet {
-    margin-right: 4.2916rem;
+  width: 45vw;
+  object-fit: cover;
+  margin-right: 5vw;
+  @include mobile {
+    object-fit: cover;
+    margin: 0 auto;
+  }
+}
+@mixin personSheetInform {
+  color: $gray;
+  max-width: 25rem;
+  @include mediumFont;
+  .state {
+    display: inline-block;
+    padding: 0.5rem 0.75rem;
+    margin: 0 0 2rem;
   }
   @include mobile {
-    margin-right: 2.1458rem;
-  }
-  @include small-mobile {
-    margin-right: 1.0729rem;
+    margin: 0 auto;
+    .state {
+      margin-top: 1rem;
+    }
   }
 }
 @mixin headerMain {
   padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-bottom: 2rem;
 }
 @mixin footerMain {
   padding-top: 1.75rem;
@@ -113,6 +136,14 @@
     grid-template-columns: 1fr;
   }
 }
+@mixin buttonBlock {
+  display: flex;
+  justify-content: center;
+  @media (max-width: 650px) {
+    display: none;
+  }
+}
+
 $desktop: 1920px;
 $laptop: 1440px;
 $small-laptop: 1230px;
@@ -120,3 +151,4 @@ $small-screen: 1024px;
 $tablet: 768px;
 $mobile: 482px;
 $small-mobile: 320px;
+$buttonBlockMobile: 600px;

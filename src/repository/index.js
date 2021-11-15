@@ -1,8 +1,8 @@
-import PersonList from "./GetPersonList";
+import Persons from "./GetPersons";
 import Quote from "./GetQuote";
 
 class Reposirory {
-  APIPersonList = PersonList;
+  APIPersons = Persons;
   APIQuote = Quote;
 }
 

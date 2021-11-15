@@ -1,5 +1,6 @@
 import {
-  LOAD_PERSON,
+  GET_PERSON,
+  GET_PERSON_LIST,
   LOADING_ERROR,
   LOADING_IN_PROGRESS,
   GET_QUOTE,
@@ -7,6 +8,7 @@ import {
 
 export const initialState = {
   characters: [],
+  character: {},
   randomQuote: "",
   isLoad: false,
   errorValue: "",
@@ -14,10 +16,20 @@ export const initialState = {
 
 const personData = (state = initialState, action) => {
   switch (action.type) {
-    case LOAD_PERSON:
+    case GET_PERSON_LIST:
       return {
         ...state,
         characters: action.payload,
+      };
+    case GET_PERSON:
+      return {
+        ...state,
+        character: action.payload,
+      };
+    case GET_QUOTE:
+      return {
+        ...state,
+        randomQuote: action.payload,
       };
     case LOADING_ERROR:
       return {
@@ -28,11 +40,6 @@ const personData = (state = initialState, action) => {
       return {
         ...state,
         isLoad: action.payload,
-      };
-    case GET_QUOTE:
-      return {
-        ...state,
-        randomQuote: action.payload,
       };
     default:
       return state;

@@ -1,13 +1,18 @@
 import {
-  LOAD_PERSON,
+  GET_PERSON,
+  GET_PERSON_LIST,
   LOADING_ERROR,
   LOADING_IN_PROGRESS,
   GET_QUOTE,
 } from "../actionTypes/getPersonData";
 import Repository from "../../repository";
 
-export const loadPerson = (value) => {
-  return { type: LOAD_PERSON, payload: value };
+export const getPerson = (value) => {
+  return { type: GET_PERSON, payload: value };
+};
+
+export const getPersonList = (value) => {
+  return { type: GET_PERSON_LIST, payload: value };
 };
 
 export const loadingError = (value) => {
@@ -22,29 +27,31 @@ export const loadQuoteElement = (quote) => {
   return { type: GET_QUOTE, payload: quote };
 };
 
-export const loadPersonList = () => async (dispatch) => {
+export const loadPersons = (id, quantity, isList) => async (dispatch) => {
   dispatch(loadInProgress(true));
-  const { value, error } = await Repository.APIPersonList.getPersonList();
-  if (error || !value) {
+  const { value, error } = await Repository.APIPersons.getPersons(id, quantity);
+  if (error) {
     dispatch(loadingError(error));
+    dispatch(getPerson({}));
+  } else if (isList) {
+    dispatch(getPersonList(value));
+  } else {
+    dispatch(getPerson(value[0]));
+    dispatch(loadQuote(value[0]));
   }
-  dispatch(loadPerson(value));
   dispatch(loadInProgress(false));
 };
 
 export const loadQuote = (character) => async (dispatch) => {
   dispatch(loadInProgress(true));
-  const { value, error } = await Repository.APIQuote.getQuote(
-    character.name
-  );
+  const { value, error } = await Repository.APIQuote.getQuote(character.name);
   if (error) {
     dispatch(loadingError(true));
   }
   if (value.length) {
     dispatch(loadQuoteElement(value[0].quote));
-  }
-  else {
-    dispatch(loadQuoteElement('Any quotes are missing for this character.'))
+  } else {
+    dispatch(loadQuoteElement("Any quotes are missing for this character."));
   }
   dispatch(loadInProgress(false));
 };

@@ -1,7 +1,11 @@
-import { HOME_PAGE_LOAD } from "../actionTypes/services";
+import {
+  HOME_PAGE_LOAD,
+  CATALOG_FORMAT,
+} from "../actionTypes/services";
 
 export const initialState = {
   isHomePage: true,
+  isCardsList: false,
 };
 
 const services = (state = initialState, action) => {
@@ -11,6 +15,11 @@ const services = (state = initialState, action) => {
         ...state,
         isHomePage: action.payload,
       };
+      case CATALOG_FORMAT:
+        return {
+          ...state,
+          isCardsList: action.payload,
+        };
     default:
       return state;
   }

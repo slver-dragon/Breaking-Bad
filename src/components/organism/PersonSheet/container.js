@@ -1,23 +1,26 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
-import { loadQuote } from "../../../store/actions/getPersonData";
+import { loadPersons } from "../../../store/actions/getPersonData";
 import Error from "../../atom/Error";
+import Loader from "../../atom/Loader";
 import PersonSheet from "./component";
 
 export const PersonSheetContainer = () => {
   const dispatch = useDispatch();
-  let randomQuote = useSelector((state) => state.personData.randomQuote);
+  const { id } = useParams();
   const isLoading = useSelector((state) => state.personData.isLoad);
   const errorValue = useSelector((state) => state.personData.isError);
-  let character = "";
-  const { id } = useParams();
-  const characters = useSelector((state) => state.personData.characters);
+  const character = useSelector((state) => state.personData.character);
+  const randomQuote = useSelector((state) => state.personData.randomQuote);
+  useEffect(
+    () => {
+      dispatch(loadPersons(id - 1, 1, false));
+    },
+    // eslint-disable-next-line
+    []
+  );
 
-  character = characters.find((item) => String(item.char_id) === id);
-  useEffect(() => {
-    dispatch(loadQuote(character));
-  }, [dispatch, character]);
   return (
     <div>
       {character ? (
@@ -27,8 +30,10 @@ export const PersonSheetContainer = () => {
           isLoading={isLoading}
           errorValue={errorValue}
         />
+      ) : character ? (
+        <Loader />
       ) : (
-        <Error textError={"Отсутствие данных персонажа."} />
+        <Error textError="Не удалось получить данные персонажа!" />
       )}
     </div>
   );

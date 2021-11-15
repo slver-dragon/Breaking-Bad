@@ -18,9 +18,6 @@ const PersonCard = ({ name, birthday, img, status, id }) => {
       statusStyle = style.presumedDead;
     }
   }
-  const statusElement = (
-    <p className={style.state + " " + statusStyle}>{status}</p>
-  );
 
   return (
     <Link to={`/person/${id}`} className={style.main}>
@@ -28,7 +25,7 @@ const PersonCard = ({ name, birthday, img, status, id }) => {
         <img className={style.photo} src={img} alt={name} />
       </div>
       <div className={style.inform}>
-        {statusElement}
+        <p className={style.state + " " + statusStyle}>{status}</p>
         <p className={style.name}>{name}</p>
         <p className={style.birthday}>{birthday} </p>
       </div>

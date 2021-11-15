@@ -5,10 +5,10 @@ const Button = ({ img, text }) => {
   const imageElement = img !== "" ? <img src={img} alt="" /> : "";
   const textElement = text !== "" ? <span>{text}</span> : "";
   return (
-    <div className={style.button}>
+    <button className={style.button}>
       {imageElement}
       {textElement}
-    </div>
+    </button>
   );
 };
 
