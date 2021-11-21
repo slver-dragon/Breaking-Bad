@@ -1,6 +1,7 @@
 import {
   GET_PERSON,
   GET_PERSON_LIST,
+  GET_CHARACTERS_MAX_LENGTH,
   LOADING_ERROR,
   LOADING_IN_PROGRESS,
   GET_QUOTE,
@@ -13,6 +14,10 @@ export const getPerson = (value) => {
 
 export const getPersonList = (value) => {
   return { type: GET_PERSON_LIST, payload: value };
+};
+
+export const getCharactersMaxLength = (value) => {
+  return { type: GET_CHARACTERS_MAX_LENGTH, payload: value };
 };
 
 export const loadingError = (value) => {
@@ -34,7 +39,11 @@ export const loadPersons = (id, quantity, isList) => async (dispatch) => {
     dispatch(loadingError(error));
     dispatch(getPerson({}));
   } else if (isList) {
-    dispatch(getPersonList(value));
+    if (quantity === "all") {
+      dispatch(getCharactersMaxLength(value.length));
+    } else {
+      dispatch(getPersonList(value));
+    }
   } else {
     dispatch(getPerson(value[0]));
     dispatch(loadQuote(value[0]));

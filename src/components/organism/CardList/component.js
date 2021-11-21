@@ -8,7 +8,6 @@ import style from "./style.module.scss";
 const CardList = ({ characters, isLoading, errorValue, isCardsList }) => {
   let listItem = "";
   const styleCatalog = isCardsList ? style.wrapperList : style.wrapperGrid;
-
   if (isCardsList) {
     listItem = !errorValue
       ? characters.map((character) => (

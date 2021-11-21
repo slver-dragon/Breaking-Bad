@@ -143,7 +143,12 @@
     display: none;
   }
 }
-
+@mixin paginatorMain {
+  justify-content: space-between;
+  @media (max-width: 750px) {
+    flex-direction: column;
+  }
+}
 $desktop: 1920px;
 $laptop: 1440px;
 $small-laptop: 1230px;

@@ -1,6 +1,8 @@
 import {
   HOME_PAGE_LOAD,
-  CATALOG_FORMAT
+  CATALOG_FORMAT,
+  CHANGE_ELEMENT_COUNT,
+  SET_CURRENT_PAGE
 } from "../actionTypes/services";
 
 export const displayHome = (value) => {
@@ -9,4 +11,12 @@ export const displayHome = (value) => {
 
 export const changeCatalogFormat = (value) => {
   return { type: CATALOG_FORMAT, payload: value};
+};
+
+export const changeElementCount = (count) => {
+  return { type: CHANGE_ELEMENT_COUNT, payload: count};
+};
+
+export const setCurrentPage = (value) => {
+  return { type: SET_CURRENT_PAGE, payload: value};
 };
