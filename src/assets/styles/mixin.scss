@@ -83,7 +83,7 @@
   @include tablet {
     margin-top: 2.5rem;
   }
-  @include mobile {
+  @media (max-width: 650px) {
     display: block;
     margin-top: 1rem;
   }
