@@ -1,6 +1,7 @@
 import {
   GET_PERSON,
   GET_PERSON_LIST,
+  GET_CHARACTERS_MAX_LENGTH,
   LOADING_ERROR,
   LOADING_IN_PROGRESS,
   GET_QUOTE,
@@ -8,6 +9,7 @@ import {
 
 export const initialState = {
   characters: [],
+  charactersMaxLength: 0,
   character: {},
   randomQuote: "",
   isLoad: false,
@@ -25,6 +27,11 @@ const personData = (state = initialState, action) => {
       return {
         ...state,
         character: action.payload,
+      };
+    case GET_CHARACTERS_MAX_LENGTH:
+      return {
+        ...state,
+        charactersMaxLength: action.payload,
       };
     case GET_QUOTE:
       return {

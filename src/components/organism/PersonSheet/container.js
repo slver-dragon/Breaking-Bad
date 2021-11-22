@@ -15,7 +15,7 @@ export const PersonSheetContainer = () => {
   const randomQuote = useSelector((state) => state.personData.randomQuote);
   useEffect(
     () => {
-      dispatch(loadPersons(id - 1, 1, false));
+      dispatch(loadPersons(id, 1, false));
     },
     // eslint-disable-next-line
     []

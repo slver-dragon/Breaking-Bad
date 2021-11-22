@@ -1,24 +1,33 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import CardList from "./component";
-import Button from "../../atom/Button";
+import FormatChanger from "../../molecule/FormatChanger";
+import Paginator from "../../molecule/Paginator";
 import { loadPersons } from "../../../store/actions/getPersonData";
-import { changeCatalogFormat } from "../../../store/actions/services";
+import {
+  changeCatalogFormat,
+  changeElementCount,
+  setCurrentPage,
+} from "../../../store/actions/services";
 import style from "./style.module.scss";
-import cardsListOn from "../../../assets/img/listOn.png";
-import cardsListOff from "../../../assets/img/listOff.png";
-import cardsGridOn from "../../../assets/img/gridOn.png";
-import cardsGridOff from "../../../assets/img/gridOff.png";
 
 const PersonListContainer = () => {
   const dispatch = useDispatch();
   const characters = useSelector((state) => state.personData.characters);
+  const cardsMaxCount = useSelector(
+    (state) => state.personData.charactersMaxLength
+  );
   const isLoading = useSelector((state) => state.personData.isLoad);
   const errorValue = useSelector((state) => state.personData.errorValue);
-  let isCardsList = useSelector((state) => state.services.isCardsList);
-  const [cardsListImage, cardsGridImage] = isCardsList
-    ? [cardsListOn, cardsGridOff]
-    : [cardsListOff, cardsGridOn];
+  const isCardsList = useSelector((state) => state.services.isCardsList);
+  const currentPage = useSelector((state) => state.services.currentPage);
+  const exchangeCatalogFormat = (value) => dispatch(changeCatalogFormat(value));
+  const changeCount = (value) => dispatch(changeElementCount(value));
+  const changePage = (value) => dispatch(setCurrentPage(value));
+  const pageElementCount = useSelector(
+    (state) => state.services.pageElementCount
+  );
+
   const titleMenu = isCardsList ? (
     <div>
       <div className={style.wrapper}>
@@ -36,12 +45,24 @@ const PersonListContainer = () => {
   const divider = isCardsList ? <div className={style.divider} /> : "";
   useEffect(
     () => {
-      dispatch(loadPersons(0, 10, true));
+      dispatch(loadPersons(0, "all", true));
     },
     // eslint-disable-next-line
     []
   );
-
+  useEffect(
+    () => {
+      dispatch(
+        loadPersons(
+          (currentPage - 1) * pageElementCount,
+          pageElementCount,
+          true
+        )
+      );
+    },
+    // eslint-disable-next-line
+    [currentPage, pageElementCount, isCardsList]
+  );
   useEffect(() => {
     if (isCardsList && window.innerWidth <= 600) {
       dispatch(changeCatalogFormat(false));
@@ -49,27 +70,31 @@ const PersonListContainer = () => {
   });
 
   return (
-    <div className={style.main}>
-      <div className={style.changer}>
-        <span>Каталог</span>
-        <div className={style.buttonBlock}>
-          <span onClick={() => dispatch(changeCatalogFormat(true))}>
-            <Button img={cardsListImage} text={""} />
-          </span>
-          <span onClick={() => dispatch(changeCatalogFormat(false))}>
-            <Button img={cardsGridImage} text={""} />
-          </span>
-        </div>
+    <div className={style.container}>
+      <div className={style.main}>
+        <FormatChanger
+          isCardsList={isCardsList}
+          exchangeCatalogFormat={exchangeCatalogFormat}
+        />
+        {titleMenu}
+        <CardList
+          id="CardList"
+          characters={characters}
+          isLoading={isLoading}
+          errorValue={errorValue}
+          isCardsList={isCardsList}
+        />
+        {divider}
       </div>
-      {titleMenu}
-      <CardList
-        id="CardList"
-        characters={characters}
-        isLoading={isLoading}
-        errorValue={errorValue}
-        isCardsList={isCardsList}
-      />
-      {divider}
+      <div className={style.paginator}>
+        <Paginator
+          currentPage={currentPage}
+          pageElementCount={pageElementCount}
+          cardsMaxCount={cardsMaxCount}
+          changeCount={changeCount}
+          changePage={changePage}
+        />
+      </div>
     </div>
   );
 };
