@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import CardList from "./component";
+import FormatChanger from "../../molecule/FormatChanger";
 import Paginator from "../../molecule/Paginator";
-import Button from "../../atom/Button";
 import { loadPersons } from "../../../store/actions/getPersonData";
 import {
   changeCatalogFormat,
@@ -10,10 +10,6 @@ import {
   setCurrentPage,
 } from "../../../store/actions/services";
 import style from "./style.module.scss";
-import cardsListOn from "../../../assets/img/listOn.png";
-import cardsListOff from "../../../assets/img/listOff.png";
-import cardsGridOn from "../../../assets/img/gridOn.png";
-import cardsGridOff from "../../../assets/img/gridOff.png";
 
 const PersonListContainer = () => {
   const dispatch = useDispatch();
@@ -25,14 +21,13 @@ const PersonListContainer = () => {
   const errorValue = useSelector((state) => state.personData.errorValue);
   const isCardsList = useSelector((state) => state.services.isCardsList);
   const currentPage = useSelector((state) => state.services.currentPage);
+  const exchangeCatalogFormat = (value) => dispatch(changeCatalogFormat(value));
   const changeCount = (value) => dispatch(changeElementCount(value));
   const changePage = (value) => dispatch(setCurrentPage(value));
   const pageElementCount = useSelector(
     (state) => state.services.pageElementCount
   );
-  const [cardsListImage, cardsGridImage] = isCardsList
-    ? [cardsListOn, cardsGridOff]
-    : [cardsListOff, cardsGridOn];
+
   const titleMenu = isCardsList ? (
     <div>
       <div className={style.wrapper}>
@@ -77,17 +72,10 @@ const PersonListContainer = () => {
   return (
     <div className={style.container}>
       <div className={style.main}>
-        <div className={style.changer}>
-          <span>Каталог</span>
-          <div className={style.buttonBlock}>
-            <span onClick={() => dispatch(changeCatalogFormat(true))}>
-              <Button img={cardsListImage} text={""} />
-            </span>
-            <span onClick={() => dispatch(changeCatalogFormat(false))}>
-              <Button img={cardsGridImage} text={""} />
-            </span>
-          </div>
-        </div>
+        <FormatChanger
+          isCardsList={isCardsList}
+          exchangeCatalogFormat={exchangeCatalogFormat}
+        />
         {titleMenu}
         <CardList
           id="CardList"

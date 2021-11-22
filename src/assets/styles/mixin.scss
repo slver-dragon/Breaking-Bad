@@ -89,12 +89,12 @@
   }
 }
 @mixin personSheetPhotoWrapper {
-  width: 30vw;
+  max-width: 20rem;
   object-fit: cover;
   margin-right: 5vw;
   @include mobile {
     object-fit: cover;
-    width: 40vw;
+    max-width: 15rem;
   }
 }
 @mixin personSheetInform {

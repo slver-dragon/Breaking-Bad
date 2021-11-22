@@ -1,8 +1,8 @@
 import React from "react";
 import Button from "../../atom/Button";
-import style from "./style.module.scss";
 import leftArrow from "../../../assets/img/leftArrow.png";
 import rightArrow from "../../../assets/img/rightArrow.png";
+import style from "./style.module.scss";
 
 const Paginator = ({
   currentPage,
@@ -78,7 +78,6 @@ const Paginator = ({
       ""
     );
 
-  console.log(startPages, countPages, endPages);
   return (
     <div className={style.main}>
       <div className={style.pages}>
