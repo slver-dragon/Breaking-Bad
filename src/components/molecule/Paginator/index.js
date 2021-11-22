@@ -97,7 +97,7 @@ const Paginator = ({
         <span
           onClick={() =>
             changePage(
-              currentPage <= pages.length ? ++currentPage : currentPage
+              currentPage <= pages.length-1 ? ++currentPage : currentPage
             )
           }
         >

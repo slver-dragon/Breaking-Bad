@@ -1,5 +1,6 @@
 @import "../../../assets/styles/style";
 .main {
+  margin-top: 1rem;
   display: flex;
   align-items: center;
   @include paginatorMain;

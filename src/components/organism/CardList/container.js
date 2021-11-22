@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import CardList from "./component";
-import Paginator from "../../molecule/Pagintor";
+import Paginator from "../../molecule/Paginator";
 import Button from "../../atom/Button";
 import { loadPersons } from "../../../store/actions/getPersonData";
 import {
@@ -75,34 +75,38 @@ const PersonListContainer = () => {
   });
 
   return (
-    <div className={style.main}>
-      <div className={style.changer}>
-        <span>Каталог</span>
-        <div className={style.buttonBlock}>
-          <span onClick={() => dispatch(changeCatalogFormat(true))}>
-            <Button img={cardsListImage} text={""} />
-          </span>
-          <span onClick={() => dispatch(changeCatalogFormat(false))}>
-            <Button img={cardsGridImage} text={""} />
-          </span>
+    <div className={style.container}>
+      <div className={style.main}>
+        <div className={style.changer}>
+          <span>Каталог</span>
+          <div className={style.buttonBlock}>
+            <span onClick={() => dispatch(changeCatalogFormat(true))}>
+              <Button img={cardsListImage} text={""} />
+            </span>
+            <span onClick={() => dispatch(changeCatalogFormat(false))}>
+              <Button img={cardsGridImage} text={""} />
+            </span>
+          </div>
         </div>
+        {titleMenu}
+        <CardList
+          id="CardList"
+          characters={characters}
+          isLoading={isLoading}
+          errorValue={errorValue}
+          isCardsList={isCardsList}
+        />
+        {divider}
       </div>
-      {titleMenu}
-      <CardList
-        id="CardList"
-        characters={characters}
-        isLoading={isLoading}
-        errorValue={errorValue}
-        isCardsList={isCardsList}
-      />
-      {divider}
-      <Paginator
-        currentPage={currentPage}
-        pageElementCount={pageElementCount}
-        cardsMaxCount={cardsMaxCount}
-        changeCount={changeCount}
-        changePage={changePage}
-      />
+      <div className={style.paginator}>
+        <Paginator
+          currentPage={currentPage}
+          pageElementCount={pageElementCount}
+          cardsMaxCount={cardsMaxCount}
+          changeCount={changeCount}
+          changePage={changePage}
+        />
+      </div>
     </div>
   );
 };
