@@ -7,6 +7,7 @@
     flex-direction: column;
     min-height: 60vh;
     @include mainContainer;
+    margin: 0 auto;
     .wrapper {
       display: flex;
       justify-content: space-between;
@@ -43,5 +44,6 @@
   }
   .paginator {
     @include mainContainer;
+    margin: 0 auto;
   }
 }

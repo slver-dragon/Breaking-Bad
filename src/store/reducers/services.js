@@ -3,9 +3,11 @@ import {
   CATALOG_FORMAT,
   CHANGE_ELEMENT_COUNT,
   SET_CURRENT_PAGE,
+  SET_SELECTION_REQUEST,
 } from "../actionTypes/services";
 
 export const initialState = {
+  selectionRequest: "all",
   isHomePage: true,
   isCardsList: false,
   currentPage: 1,
@@ -34,6 +36,11 @@ const services = (state = initialState, action) => {
         ...state,
         currentPage: action.payload,
       };
+      case SET_SELECTION_REQUEST:
+        return {
+          ...state,
+          selectionRequest: action.payload,
+        };
     default:
       return state;
   }

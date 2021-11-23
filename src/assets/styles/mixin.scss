@@ -69,7 +69,6 @@
 @mixin mainContainer {
   max-width: 75rem;
   padding: 0 1rem;
-  margin: 0 auto;
   @include small-laptop {
     max-width: 64rem;
   }
@@ -147,6 +146,31 @@
   justify-content: space-between;
   @media (max-width: 750px) {
     flex-direction: column;
+  }
+}
+@mixin shadowBox {
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.25rem;
+  background-color: $white;
+}
+@mixin searchField {
+  width: 49rem;
+  height: 3.5rem;
+  margin: 3rem auto;
+  @include tablet {
+    width: 30rem;
+    height: 2.5rem;
+    margin: 2rem auto;
+  }
+  @include mobile {
+    width: 18rem;
+    height: 1.5rem;
+    margin: 1rem auto;
+  }
+  @include small-mobile {
+    width: 12rem;
+    height: 1rem;
+    margin: 0.5rem auto;
   }
 }
 $desktop: 1920px;

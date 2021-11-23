@@ -6,6 +6,7 @@
   .main {
     .container {
       @include mainContainer;
+      margin: 0 auto;
       padding-top: 2.5rem;
       .backToCatalog {
         display: flex;

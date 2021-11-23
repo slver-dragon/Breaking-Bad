@@ -1,0 +1,16 @@
+@import "../../../assets/styles/style";
+.search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include mainContainer;
+  @include shadowBox;
+  @include searchField;
+
+  input {
+    width: 90%;
+    &:focus {
+      outline: none;
+    }
+  }
+}

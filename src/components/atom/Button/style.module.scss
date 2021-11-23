@@ -7,5 +7,6 @@
   cursor: pointer;
   span {
     @include mediumFont;
+    margin-left: 0.75rem;
   }
 }

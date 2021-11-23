@@ -6,12 +6,10 @@ class Persons {
       value: null,
       error: null,
     };
-    let link =
-      quantity === "all"
-        ? `https://www.breakingbadapi.com/api/characters`
-        : quantity === 1
-        ? `https://www.breakingbadapi.com/api/characters/${id}`
-        : `https://www.breakingbadapi.com/api/characters?limit=${quantity}&offset=${id}`;
+    let link = 'https://www.breakingbadapi.com/api/characters'
+    link =
+      typeof quantity === "string" ? (quantity === "all" ? link : `${link}?name=${quantity}`)
+        : (quantity === 1 ? `${link}/${id}` : `${link}?limit=${quantity}&offset=${id}`);
     try {
       const response = await axios.get(link);
       result.value = response.data;
