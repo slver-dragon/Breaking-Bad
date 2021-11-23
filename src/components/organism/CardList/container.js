@@ -69,19 +69,6 @@ const PersonListContainer = () => {
     [start, request]
   );
 
-  // useEffect(
-  //   () => {
-  //     dispatch(
-  //       loadPersons(
-  //         (currentPage - 1) * pageElementCount,
-  //         pageElementCount,
-  //         true
-  //       )
-  //     );
-  //   },
-  //   // eslint-disable-next-line
-  //   [currentPage, pageElementCount, isCardsList]
-  // );
   useEffect(() => {
     if (isCardsList && window.innerWidth <= 600) {
       dispatch(changeCatalogFormat(false));
