@@ -16,7 +16,6 @@ const Paginator = ({
   for (let i = 1; i <= cardsMaxCount / pageElementCount + 1; ++i) {
     pages.push(i);
   }
-  console.log(pages);
   const countPages = pages.map((page) =>
     page > currentPage - 3 && page < currentPage + 3 ? (
       page === currentPage ? (

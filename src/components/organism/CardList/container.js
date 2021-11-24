@@ -4,6 +4,7 @@ import CardList from "./component";
 import FormatChanger from "../../molecule/FormatChanger";
 import Paginator from "../../molecule/Paginator";
 import SearchPersons from "../../molecule/SearchPersons";
+import Error from "../../atom/Error";
 import { loadPersons } from "../../../store/actions/getPersonData";
 import {
   changeCatalogFormat,
@@ -63,7 +64,6 @@ const PersonListContainer = () => {
     () => {
       dispatch(loadPersons(start, request, true));
       if (selectionRequest === "all") search("");
-      console.log(start, request, selectionRequest);
     },
     // eslint-disable-next-line
     [start, request]
@@ -74,7 +74,6 @@ const PersonListContainer = () => {
       dispatch(changeCatalogFormat(false));
     }
   });
-
   return (
     <div className={style.container}>
       <SearchPersons search={search} />
@@ -84,13 +83,13 @@ const PersonListContainer = () => {
           exchangeCatalogFormat={exchangeCatalogFormat}
         />
         {titleMenu}
-        <CardList
+        {(characters.length !== 0) ? (<CardList
           id="CardList"
           characters={characters}
           isLoading={isLoading}
           errorValue={errorValue}
           isCardsList={isCardsList}
-        />
+        />) : (<Error textError={"Ни одного результата не найдено!"}/>)}
         {divider}
       </div>
       <div className={style.paginator}>
