@@ -144,8 +144,10 @@
 }
 @mixin paginatorMain {
   justify-content: space-between;
+  margin: 2rem auto;
   @media (max-width: 750px) {
     flex-direction: column;
+    margin: 1rem auto;
   }
 }
 @mixin shadowBox {

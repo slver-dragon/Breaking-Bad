@@ -18,9 +18,9 @@ const SearchPersons = ({ search }) => {
       <span onClick={() => discardSearch()}>
         <Button img={cross} />
       </span>
-      <input type="text" placeholder={"Поиск"} ref={request} onKeyDown={(event) => {pressEnter(event)}} />
+      <input type="text" placeholder="Поиск" ref={request} onKeyDown={(event) => {pressEnter(event)}} />
       <span onClick={() => search(request.current.value)}>
-        <Button img={lens} text={"Найти"} />
+        <Button img={lens} text="Найти" />
       </span>
     </label>
   );
