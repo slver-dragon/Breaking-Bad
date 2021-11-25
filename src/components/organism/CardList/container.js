@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from "react-redux";
 import CardList from "./component";
 import FormatChanger from "../../molecule/FormatChanger";
 import Paginator from "../../molecule/Paginator";
-import SearchPersons from "../../molecule/SearchPersons";
 import Error from "../../atom/Error";
 import Loader from "../../atom/Loader";
 import { loadPersons } from "../../../store/actions/getPersonData";
@@ -33,10 +32,10 @@ const PersonListContainer = () => {
   const pageElementCount = useSelector(
     (state) => state.services.pageElementCount
   );
+  const search = (value) => dispatch(setSelectionRequest(value));
   const exchangeCatalogFormat = (value) => dispatch(changeCatalogFormat(value));
   const changeCount = (value) => dispatch(changeElementCount(value));
   const changePage = (value) => dispatch(setCurrentPage(value));
-  const search = (value) => dispatch(setSelectionRequest(value));
 
   const titleMenu = isCardsList ? (
     <div>
@@ -77,7 +76,6 @@ const PersonListContainer = () => {
   });
   return (
     <div className={style.container}>
-      <SearchPersons search={search} />
       <div className={style.main}>
         <FormatChanger
           isCardsList={isCardsList}
@@ -86,8 +84,7 @@ const PersonListContainer = () => {
         {titleMenu}
         {isLoading || request === "all" ? (
           <Loader />
-        ) : characters.length === 0 &&
-          typeof request !== "number" ? (
+        ) : characters.length === 0 && typeof request !== "number" ? (
           <Error textError={"Ни одного результата не найдено!"} />
         ) : (
           <CardList

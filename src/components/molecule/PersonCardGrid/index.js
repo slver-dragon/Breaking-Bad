@@ -27,7 +27,7 @@ const PersonCard = ({ name, birthday, img, status, id }) => {
       <div className={style.inform}>
         <p className={style.state + " " + statusStyle}>{status}</p>
         <p className={style.name}>{name}</p>
-        <p className={style.birthday}>{birthday} </p>
+        <p className={style.birthday}>{birthday}</p>
       </div>
     </Link>
   );

@@ -152,26 +152,6 @@
   border-radius: 0.25rem;
   background-color: $white;
 }
-@mixin searchField {
-  max-width: 70rem;
-  margin: 3rem auto;
-  @include small-screen {
-    max-width: 45rem;
-    margin: 2rem auto;
-  }
-  @include tablet {
-    max-width: 26rem;
-    margin: 2rem auto;
-  }
-  @include mobile {
-    max-width: 17rem;
-    margin: 1rem auto;
-  }
-  @include small-mobile {
-    max-width: 12rem;
-    margin: 0.5rem auto;
-  }
-}
 $desktop: 1920px;
 $laptop: 1440px;
 $small-laptop: 1230px;
