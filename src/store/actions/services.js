@@ -2,7 +2,8 @@ import {
   HOME_PAGE_LOAD,
   CATALOG_FORMAT,
   CHANGE_ELEMENT_COUNT,
-  SET_CURRENT_PAGE
+  SET_CURRENT_PAGE,
+  SET_SELECTION_REQUEST
 } from "../actionTypes/services";
 
 export const displayHome = (value) => {
@@ -19,4 +20,8 @@ export const changeElementCount = (count) => {
 
 export const setCurrentPage = (value) => {
   return { type: SET_CURRENT_PAGE, payload: value};
+};
+
+export const setSelectionRequest = (value) => {
+  return { type: SET_SELECTION_REQUEST, payload: value};
 };

@@ -69,7 +69,6 @@
 @mixin mainContainer {
   max-width: 75rem;
   padding: 0 1rem;
-  margin: 0 auto;
   @include small-laptop {
     max-width: 64rem;
   }
@@ -129,10 +128,7 @@
   @include tablet {
     grid-template-columns: 1fr 1fr;
   }
-  @include mobile {
-    grid-template-columns: 1fr;
-  }
-  @include small-mobile {
+  @media (max-width: 650px) {
     grid-template-columns: 1fr;
   }
 }
@@ -145,9 +141,16 @@
 }
 @mixin paginatorMain {
   justify-content: space-between;
+  margin: 2rem auto;
   @media (max-width: 750px) {
     flex-direction: column;
+    margin: 1rem auto;
   }
+}
+@mixin shadowBox {
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.25rem;
+  background-color: $white;
 }
 $desktop: 1920px;
 $laptop: 1440px;
