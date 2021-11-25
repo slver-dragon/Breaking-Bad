@@ -6,7 +6,7 @@
   @include mainContainer;
   @include shadowBox;
   @include searchField;
-
+  padding: 1rem;
   input {
     width: 90%;
     &:focus {

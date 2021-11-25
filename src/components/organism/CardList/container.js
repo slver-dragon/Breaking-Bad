@@ -5,6 +5,7 @@ import FormatChanger from "../../molecule/FormatChanger";
 import Paginator from "../../molecule/Paginator";
 import SearchPersons from "../../molecule/SearchPersons";
 import Error from "../../atom/Error";
+import Loader from "../../atom/Loader";
 import { loadPersons } from "../../../store/actions/getPersonData";
 import {
   changeCatalogFormat,
@@ -83,13 +84,20 @@ const PersonListContainer = () => {
           exchangeCatalogFormat={exchangeCatalogFormat}
         />
         {titleMenu}
-        {(characters.length !== 0) ? (<CardList
-          id="CardList"
-          characters={characters}
-          isLoading={isLoading}
-          errorValue={errorValue}
-          isCardsList={isCardsList}
-        />) : (<Error textError={"Ни одного результата не найдено!"}/>)}
+        {isLoading || request === "all" ? (
+          <Loader />
+        ) : characters.length === 0 &&
+          typeof request !== "number" ? (
+          <Error textError={"Ни одного результата не найдено!"} />
+        ) : (
+          <CardList
+            id="CardList"
+            characters={characters}
+            isLoading={isLoading}
+            errorValue={errorValue}
+            isCardsList={isCardsList}
+          />
+        )}
         {divider}
       </div>
       <div className={style.paginator}>
