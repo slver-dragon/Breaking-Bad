@@ -98,7 +98,7 @@ const PersonListContainer = () => {
         {divider}
       </div>
       <div className={style.paginator}>
-        {selectionRequest === "" ? (
+        {selectionRequest === "" && cardsMaxCount !== 0 ? (
           <Paginator
             currentPage={currentPage}
             pageElementCount={pageElementCount}
