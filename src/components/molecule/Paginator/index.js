@@ -77,8 +77,6 @@ const Paginator = ({
     ) : (
       ""
     );
-
-    // console.log(countPages[0],numberElement.length);
   
   return (
     <div className={style.main}>

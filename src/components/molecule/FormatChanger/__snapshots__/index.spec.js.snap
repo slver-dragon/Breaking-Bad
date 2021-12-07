@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing molecule FormatChanger: is rendering 1`] = `
+<div
+  className="changer"
+>
+  <span>
+    Каталог
+  </span>
+  <div
+    className="buttonBlock"
+  >
+    <span
+      onClick={[Function]}
+    >
+      <Button
+        img="test-file-stub"
+        text=""
+      />
+    </span>
+    <span
+      onClick={[Function]}
+    >
+      <Button
+        img="test-file-stub"
+        text=""
+      />
+    </span>
+  </div>
+</div>
+`;

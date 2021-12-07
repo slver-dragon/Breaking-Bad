@@ -1,38 +1,18 @@
 import React from "react";
 import { shallow } from "enzyme";
-import { unmountComponentAtNode } from "react-dom";
-import { act } from "react-dom/test-utils";
-import Button from "../Button"
+import Button from "../Button";
 
-describe("Testing FormatChanger:", () => {
-    let container = null;
+describe("Button atom testing:", () => {
+  let component = null;
+  const setComponent = (props) => shallow(<Button {...props}/>);
   
-    beforeEach(() => {
-      container = document.createElement("div");
-      document.body.appendChild(container);
-    });
-  
-    afterEach(() => {
-      unmountComponentAtNode(container);
-      container.remove();
-      container = null;
-    });
-  
-    test ("Button rendering ", () => {
-      act(() => {
-          shallow(<Button img="/" text="Test" />, container); 
-      })
-      expect()
-      expect(container.textContent).toBe("Test");
-      expect(container.getElementsByTagName('img')).not.toBeNull;
-    })
-
-    test ("Button empty rendering ", () => {
-      act(() => {
-        shallow(<Button />, container);
-      })
-      expect(container.textContent).toBeNull;
-      expect(container.getElementsByTagName('img')).toBeNull;
-    })
+  test("is render full", () => {
+    component = setComponent({img:'./test.jpg', text:'Test message'});
+    expect(component).toMatchSnapshot();
   });
-  
+
+  test("is render empty", () => {
+    component = setComponent({img:'', text:''});
+    expect(component).toMatchSnapshot();
+  });
+});
