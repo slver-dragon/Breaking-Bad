@@ -16,7 +16,7 @@ const SearchPersons = ({ search }) => {
   return (
     <div className={style.search}>
       <label className={style.container}>
-        <span onClick={() => discardSearch()}>
+        <span id="Clear" onClick={() => discardSearch()}>
           <Button img={cross} />
         </span>
         <input
@@ -27,7 +27,7 @@ const SearchPersons = ({ search }) => {
             pressEnter(event);
           }}
         />
-        <span onClick={() => search(request.current.value)}>
+        <span id="Search" onClick={() => search(request.current.value)}>
           <Button img={lens} text="Найти" />
         </span>
       </label>

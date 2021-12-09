@@ -1,6 +1,6 @@
 import React from "react";
 import { shallow } from "enzyme";
-import Button from "../Button";
+import Button from ".";
 
 describe("Button atom testing:", () => {
   let component = null;

@@ -11,6 +11,7 @@ exports[`Testing molecule FormatChanger: is rendering 1`] = `
     className="buttonBlock"
   >
     <span
+      id="PutListFormat"
       onClick={[Function]}
     >
       <Button
@@ -19,6 +20,7 @@ exports[`Testing molecule FormatChanger: is rendering 1`] = `
       />
     </span>
     <span
+      id="PutGridFormat"
       onClick={[Function]}
     >
       <Button

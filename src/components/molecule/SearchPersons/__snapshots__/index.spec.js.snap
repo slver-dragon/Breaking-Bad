@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing molecule SearchPersons: is rendering 1`] = `
+<div
+  className="search"
+>
+  <label
+    className="container"
+  >
+    <span
+      id="Clear"
+      onClick={[Function]}
+    >
+      <Button
+        img="test-file-stub"
+      />
+    </span>
+    <input
+      onKeyDown={[Function]}
+      placeholder="Поиск"
+      type="text"
+    />
+    <span
+      id="Search"
+      onClick={[Function]}
+    >
+      <Button
+        img="test-file-stub"
+        text="Найти"
+      />
+    </span>
+  </label>
+</div>
+`;

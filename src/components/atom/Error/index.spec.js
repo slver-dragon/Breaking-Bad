@@ -1,6 +1,6 @@
 import React from "react";
 import { shallow } from "enzyme";
-import Error from "../Error";
+import Error from ".";
 
 describe("Error atom testing:", () => {
   test("Is render", () => {

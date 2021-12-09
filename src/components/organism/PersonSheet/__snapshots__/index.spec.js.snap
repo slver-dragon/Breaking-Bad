@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing organism PersonSheet: component is rendering 1`] = `
+<div
+  className="wrapper"
+>
+  <div
+    className="wrapper"
+  >
+    <div
+      className="main"
+    >
+      <div
+        className="photoWrapper"
+      >
+        <img
+          className="photo"
+        />
+      </div>
+      <div
+        className="inform"
+      >
+        <p
+          className="state alive"
+        >
+          Alive
+        </p>
+        <p
+          className="name"
+        />
+        <p>
+          Дата рождения:
+           
+          <span
+            className="birthday"
+          >
+             
+          </span>
+        </p>
+        <p>
+          Ник-нейм:
+           
+          <span
+            className="nickname"
+          >
+             
+          </span>
+        </p>
+        <p
+          className="quoteMargin"
+        >
+          Цитата: 
+          <span
+            className="quote"
+          >
+             
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;

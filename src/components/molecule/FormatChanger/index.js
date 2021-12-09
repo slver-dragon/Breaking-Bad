@@ -14,10 +14,10 @@ const FormatChanger = ({ isCardsList, exchangeCatalogFormat }) => {
     <div className={style.changer}>
       <span>Каталог</span>
       <div className={style.buttonBlock}>
-        <span onClick={() => exchangeCatalogFormat(true)}>
+        <span id="PutListFormat" onClick={() => exchangeCatalogFormat(true)}>
           <Button img={cardsListImage} text={""} />
         </span>
-        <span onClick={() => exchangeCatalogFormat(false)}>
+        <span id="PutGridFormat" onClick={() => exchangeCatalogFormat(false)}>
           <Button img={cardsGridImage} text={""} />
         </span>
       </div>

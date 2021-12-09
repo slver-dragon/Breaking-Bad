@@ -16,15 +16,23 @@ const Paginator = ({
   for (let i = 1; i <= cardsMaxCount / pageElementCount + 1; ++i) {
     pages.push(i);
   }
-  console.log(pages,pageElementCount)
   const countPages = pages.map((page) =>
     page > currentPage - 3 && page < currentPage + 3 ? (
       page === currentPage ? (
-        <span className={style.active} key={page.toString()} onClick={() => changePage(page) }>
+        <span
+          id="CurrentPage"
+          className={style.active}
+          key={page.toString()}
+          onClick={() => changePage(page)}
+        >
           <Button text={page} />
         </span>
       ) : (
-        <span key={page.toString()} onClick={() => changePage(page)}>
+        <span
+          id="CurrentPage"
+          key={page.toString()}
+          onClick={() => changePage(page)}
+        >
           <Button text={page} />
         </span>
       )
@@ -34,18 +42,31 @@ const Paginator = ({
   );
   const numberElement = counts.map((count) =>
     count === pageElementCount ? (
-      <span className={style.active} key={count.toString()} onClick={() => changeCount(count)}>
+      <span
+        id="CountElement"
+        className={style.active}
+        key={count.toString()}
+        onClick={() => changeCount(count)}
+      >
         <Button text={count} />
       </span>
     ) : (
-      <span key={count.toString()} onClick={() => changeCount(count)}>
+      <span
+        id="CountElement"
+        key={count.toString()}
+        onClick={() => changeCount(count)}
+      >
         <Button text={count} />
       </span>
     )
   );
   const startPages = pages.slice(0, 2).map((page) =>
     currentPage > 4 ? (
-      <span key={page.toString()} onClick={() => changePage(page)}>
+      <span
+        id="StartPage"
+        key={page.toString()}
+        onClick={() => changePage(page)}
+      >
         <Button text={page} />
       </span>
     ) : (
@@ -54,37 +75,33 @@ const Paginator = ({
   );
   const endPages = pages.slice(pages.length - 2, pages.length).map((page) =>
     currentPage < pages.length - 3 ? (
-      <span key={page.toString()} onClick={() => changePage(page)}>
+      <span id="EndPage" key={page.toString()} onClick={() => changePage(page)}>
         <Button text={page} />
       </span>
     ) : (
       ""
     )
   );
-  const multiDotsStart =
-    currentPage > 5 ? (
-      <span onClick={() => changePage(currentPage - 3)}>
-        <Button text={"..."} />
-      </span>
-    ) : (
-      ""
-    );
-  const multiDotsEnd =
-    currentPage < pages.length - 4 ? (
-      <span onClick={() => changePage(currentPage + 3)}>
-        <Button text={"..."} />
-      </span>
-    ) : (
-      ""
-    );
-  
+
   return (
     <div className={style.main}>
       <div className={style.pages}>
         {startPages}
-        {multiDotsStart}
+        {currentPage > 5 ? (
+          <span id="MultiDotFirst" onClick={() => changePage(currentPage - 3)}>
+            <Button text={"..."} />
+          </span>
+        ) : (
+          ""
+        )}
         {countPages}
-        {multiDotsEnd}
+        {currentPage < pages.length - 4 ? (
+          <span id="MultiDotLast" onClick={() => changePage(currentPage + 3)}>
+            <Button text={"..."} />
+          </span>
+        ) : (
+          ""
+        )}
         {endPages}
         <span
           onClick={() =>
@@ -96,7 +113,7 @@ const Paginator = ({
         <span
           onClick={() =>
             changePage(
-              currentPage <= pages.length-1 ? ++currentPage : currentPage
+              currentPage <= pages.length - 1 ? ++currentPage : currentPage
             )
           }
         >

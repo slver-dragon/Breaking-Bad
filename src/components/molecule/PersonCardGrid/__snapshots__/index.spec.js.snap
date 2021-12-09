@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing molecule Paginator: is rendering 1`] = `
+<Link
+  className="main"
+  to="/person/undefined"
+>
+  <div
+    className="photoWrapper"
+  >
+    <img
+      className="photo"
+    />
+  </div>
+  <div
+    className="inform"
+  >
+    <p
+      className="state presumedDead"
+    />
+    <p
+      className="name"
+    />
+    <p
+      className="birthday"
+    />
+  </div>
+</Link>
+`;
