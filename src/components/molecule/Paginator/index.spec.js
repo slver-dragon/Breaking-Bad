@@ -66,17 +66,6 @@ describe("Testing molecule Paginator:", () => {
     expect(onBtnClick).toHaveBeenCalled();
   });
 
-  // test("control outrange 108-116", () => {
-  //   component = setComponent({changePage: onBtnClick, currentPage: 2, cardsMaxCount:63, pageElementCount: 10, });
-  //   console.log(component.find(".active").at(0).debug());
-  // component.find(".active").at(0).simulate("click");
-  // component.find(".pages").childAt(0).simulate("click");
-  // console.log(component.find(".active").at(0).debug());
-  // expect(onBtnClick).toHaveBeenCalled();
-  // component.find("#CountElement").at(0).simulate("click");
-  // expect(onBtnClick).toHaveBeenCalled();
-  // });
-
   test("EndPage absent", () => {
     component = setComponent({
       changePage: onBtnClick,

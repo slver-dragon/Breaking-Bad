@@ -1,34 +1,58 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Testing molecule SearchPersons: is rendering 1`] = `
-<div
-  className="search"
->
-  <label
-    className="container"
+<SearchPersons>
+  <div
+    className="search"
   >
-    <span
-      id="Clear"
-      onClick={[Function]}
+    <label
+      className="container"
     >
-      <Button
-        img="test-file-stub"
+      <span
+        id="Clear"
+        onClick={[Function]}
+      >
+        <Button
+          img="test-file-stub"
+        >
+          <button
+            className="button"
+          >
+            <img
+              alt=""
+              src="test-file-stub"
+            />
+            <span />
+          </button>
+        </Button>
+      </span>
+      <input
+        onKeyDown={[Function]}
+        placeholder="Поиск"
+        type="text"
       />
-    </span>
-    <input
-      onKeyDown={[Function]}
-      placeholder="Поиск"
-      type="text"
-    />
-    <span
-      id="Search"
-      onClick={[Function]}
-    >
-      <Button
-        img="test-file-stub"
-        text="Найти"
-      />
-    </span>
-  </label>
-</div>
+      <span
+        id="Search"
+        onClick={[Function]}
+      >
+        <Button
+          img="test-file-stub"
+          text="Найти"
+        >
+          <button
+            className="button"
+          >
+            <img
+              alt=""
+              src="test-file-stub"
+            />
+            <span>
+              Найти
+            </span>
+          </button>
+        </Button>
+      </span>
+    </label>
+  </div>
+</SearchPersons>
 `;

@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing organism Header: is rendering 1`] = `
+<e>
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "createHref": [Function],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "pathname": "/",
+          "search": "",
+          "state": undefined,
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <Header>
+      <div
+        className="main"
+      >
+        <Link
+          className="image"
+          to="/"
+        >
+          <LinkAnchor
+            className="image"
+            href="/"
+            navigate={[Function]}
+          >
+            <a
+              className="image"
+              href="/"
+              onClick={[Function]}
+            >
+              <Button
+                img="test-file-stub"
+                text=""
+              >
+                <button
+                  className="button"
+                >
+                  <img
+                    alt=""
+                    src="test-file-stub"
+                  />
+                </button>
+              </Button>
+            </a>
+          </LinkAnchor>
+        </Link>
+        <Link
+          className="catalog forCardList"
+          to="/catalog"
+        >
+          <LinkAnchor
+            className="catalog forCardList"
+            href="/catalog"
+            navigate={[Function]}
+          >
+            <a
+              className="catalog forCardList"
+              href="/catalog"
+              onClick={[Function]}
+            >
+              <Button
+                img="test-file-stub"
+                text="Каталог"
+              >
+                <button
+                  className="button"
+                >
+                  <img
+                    alt=""
+                    src="test-file-stub"
+                  />
+                  <span>
+                    Каталог
+                  </span>
+                </button>
+              </Button>
+            </a>
+          </LinkAnchor>
+        </Link>
+      </div>
+    </Header>
+  </Router>
+</e>
+`;

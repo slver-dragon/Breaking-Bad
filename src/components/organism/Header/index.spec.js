@@ -1,23 +1,19 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { mount } from "enzyme";
 import Header from ".";
-import { useLocation } from "react-router";
-import { MemoryRoute, Route } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom/cjs/react-router-dom.min";
+
+jest.mock("react-router-dom", () => ({
+  ...jest.requireActual("react-router-dom"),
+  useLocation: () => ({
+    pathname: "/catalog"
+  }),
+}));
 
 describe("Testing organism Header:", () => {
-  const component = shallow(<Header />);
-  const container = (component) =>
-    render(
-      <MemoryRouter initialEntries={["/Catalog"]}>
-        <Route path="/Catalog">
-          {component}
-        </Route>
-      </MemoryRouter>
-    );
+  const component = mount(<BrowserRouter><Header /></BrowserRouter>);
 
-  test("is rendering", () => {
-    useLocation.pathname = "/Home";
-    console.log(container.debug());
+  it("is rendering", () => {    
     expect(component).toMatchSnapshot();
   });
 });
