@@ -23,11 +23,6 @@ describe("Breaking Bad app e2e test", () => {
       ".style_pages__1ArFM > :nth-child(3) > .style_button__3ugsu > span"
     ).click();
     cy.get(':nth-child(7) > .style_button__3ugsu > img').click();
-    cy.get('.style_pages__1ArFM > :nth-child(5) > .style_button__3ugsu > img').click();
-
+    cy.get('.style_pages__1ArFM > :nth-child(5) > .style_button__3ugsu > img').click()
   });
-
-  // it("New task delete", () => {
-  //   cy.get('div').contains('NewTask').siblings('div').click();
-  // });
 });
