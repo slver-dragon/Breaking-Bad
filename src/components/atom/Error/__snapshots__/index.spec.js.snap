@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Error atom testing: Is render 1`] = `
+<div
+  className="error"
+>
+  Test Error
+</div>
+`;

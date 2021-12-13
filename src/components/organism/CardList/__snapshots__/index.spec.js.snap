@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing organism CardList: component is rendering as grid 1`] = `
+<div>
+  <div
+    className="wrapperGrid"
+  >
+    <PersonCard
+      id={1}
+      key="1"
+    />
+    <PersonCard
+      id={2}
+      key="2"
+    />
+  </div>
+</div>
+`;
+
+exports[`Testing organism CardList: component is rendering as list 1`] = `
+<div>
+  <div
+    className="wrapperList"
+  >
+    <PersonCard
+      id={1}
+      key="1"
+    />
+    <PersonCard
+      id={2}
+      key="2"
+    />
+  </div>
+</div>
+`;

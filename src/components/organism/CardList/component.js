@@ -6,7 +6,7 @@ import Error from "../../atom/Error";
 import style from "./style.module.scss";
 
 const CardList = ({ characters, isLoading, errorValue, isCardsList }) => {
-  let listItem = "";
+  let listItem = null;
   const styleCatalog = isCardsList ? style.wrapperList : style.wrapperGrid;
   if (isCardsList) {
     listItem = !errorValue
@@ -35,7 +35,6 @@ const CardList = ({ characters, isLoading, errorValue, isCardsList }) => {
         ))
       : "";
   }
-
   return (
     <div>
       {errorValue ? (

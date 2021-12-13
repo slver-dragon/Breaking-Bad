@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button atom testing: is render empty 1`] = `
+<button
+  className="button"
+/>
+`;
+
+exports[`Button atom testing: is render full 1`] = `
+<button
+  className="button"
+>
+  <img
+    alt=""
+    src="./test.jpg"
+  />
+  <span>
+    Test message
+  </span>
+</button>
+`;
