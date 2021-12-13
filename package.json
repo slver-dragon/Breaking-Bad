@@ -38,6 +38,7 @@
     "jest": "jest",
     "jest:coverage": "jest --coverage",
     "e2e": "cypress open",
+    "e2e:app": "react-scripts start cypress open",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
