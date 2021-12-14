@@ -4,25 +4,23 @@ describe("Breaking Bad app e2e test", () => {
   });
 
   it("Click serfing", () => {
-    cy.get(".style_catalog__2Tf0B").click();
+    cy.get('a').contains('Каталог').click();
     cy.get('[href="/person/2"]').click();
-    cy.get(".style_backToCatalog__14kGk > .style_button__3ugsu").click();
-    cy.get('#PutListFormat > .style_button__3ugsu > img').click();
+    cy.get('a').contains('Назад в Каталог').click();
+    cy.get('#PutListFormat').click();
     cy.get('input').type('Walter');
-    cy.get('#Search > .style_button__3ugsu').click();
-    cy.get('#Clear > .style_button__3ugsu > img').click();
-    cy.get('[href="/"] > .style_button__3ugsu > img').click();
+    cy.get('#Search').click();
+    cy.get('#Clear').click();
+    cy.get('[href="/"]').click();
   });
 
   it("Change count element & number page", () => {
-    cy.get(".style_catalog__2Tf0B").click();
-    cy.get(
-      ".style_elementPerPage__rEa7a > :nth-child(4) > .style_button__3ugsu > span"
-    ).click();
-    cy.get(
-      ".style_pages__1ArFM > :nth-child(3) > .style_button__3ugsu > span"
-    ).click();
-    cy.get(':nth-child(7) > .style_button__3ugsu > img').click();
-    cy.get('.style_pages__1ArFM > :nth-child(5) > .style_button__3ugsu > img').click()
+    cy.get('a').contains('Каталог').click();
+    cy.get('span#CountElement:nth-child(2)').click();
+    cy.get('span#CurrentPage:nth-child(3)').click();
+    cy.get('span#MultiDotLast').click();
+    cy.get('span#MultiDotFirst').click();
+    cy.get('span:nth-child(7)').click();
+    cy.get('span#StartPage:nth-child(2)').click();
   });
 });
