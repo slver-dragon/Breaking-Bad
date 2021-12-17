@@ -84,5 +84,6 @@
       "\\.(css|scss)$": "identity-obj-proxy"
     },
     "testEnvironment": "jsdom"
-  }
+  },
+  "homepage": "https://slver-dragon.github.io/Breaking-Bad"
 }
