@@ -1,8 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-
 import { HashRouter, Route, Switch } from "react-router-dom";
-
 import Header from "./components/organism/Header";
 import Footer from "./components/organism/Footer";
 import Home from "./components/pages/Home";
@@ -16,9 +14,7 @@ function App() {
   return (
     <div className={style.body}>
       <div className={wrapperStyle}>
-
         <HashRouter>
-
           <div className={style.header}>
             <Header />
           </div>
@@ -28,7 +24,7 @@ function App() {
             <Route path="/person/:id" component={Person} />
           </Switch>
           <Footer />
-              </HashRouter>
+        </HashRouter>
       </div>
     </div>
   );
