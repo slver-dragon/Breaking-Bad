@@ -1,0 +1,162 @@
+@import "./variables";
+
+@mixin shadow {
+  border-radius: 0.25rem;
+  box-shadow: 0 0.25rem 0.5rem 0 $shadowColor;
+}
+@mixin standarFont {
+  font-family: $mainFontFamily;
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+@mixin mediumFont {
+  font-family: $mainFontFamily;
+  font-size: 1rem;
+  font-weight: 400;
+}
+@mixin personPageBigFont {
+  font-family: $mainFontFamily;
+  font-size: 2rem;
+  font-weight: 500;
+}
+@mixin stateOnColor {
+  color: $stateOn;
+  background-color: $stateBackOn;
+}
+@mixin stateOffColor {
+  color: $stateOff;
+  background-color: $stateBackOff;
+}
+@mixin statePDColor {
+  color: $white;
+  background-color: $stateBackPD;
+}
+@mixin small-mobile {
+  @media (max-width: $small-mobile) {
+    @content;
+  }
+}
+@mixin mobile {
+  @media (max-width: $mobile) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (max-width: $tablet) {
+    @content;
+  }
+}
+@mixin small-screen {
+  @media (max-width: $small-screen) {
+    @content;
+  }
+}
+@mixin small-laptop {
+  @media (max-width: $small-laptop) {
+    @content;
+  }
+}
+@mixin laptop {
+  @media (max-width: $laptop) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (max-width: $desktop) {
+    @content;
+  }
+}
+@mixin mainContainer {
+  max-width: 75rem;
+  padding: 0 1rem;
+  @include small-laptop {
+    max-width: 64rem;
+  }
+  @include small-screen {
+    max-width: 48rem;
+  }
+}
+@mixin personSheetMain {
+  display: flex;
+  margin-top: 3rem;
+  @include tablet {
+    margin-top: 2.5rem;
+  }
+  @media (max-width: 650px) {
+    display: block;
+    margin-top: 1rem;
+  }
+}
+@mixin personSheetPhotoWrapper {
+  max-width: 20rem;
+  object-fit: cover;
+  margin-right: 5vw;
+  @include mobile {
+    object-fit: cover;
+    max-width: 15rem;
+  }
+}
+@mixin personSheetInform {
+  color: $gray;
+  max-width: 25rem;
+  @include mediumFont;
+  .state {
+    display: inline-block;
+    padding: 0.5rem 0.75rem;
+    margin: 0 0 2rem;
+  }
+  @include mobile {
+    margin: 0 auto;
+    .state {
+      margin-top: 1rem;
+    }
+  }
+}
+@mixin headerMain {
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+@mixin footerMain {
+  padding-top: 1.75rem;
+  padding-bottom: 1.75rem;
+}
+@mixin cardListWrapperGrid {
+  grid-template-columns: 1fr 1fr 1fr;
+  @include small-screen {
+    grid-template-columns: 1fr 1fr;
+  }
+  @include tablet {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (max-width: 650px) {
+    grid-template-columns: 1fr;
+  }
+}
+@mixin buttonBlock {
+  display: flex;
+  justify-content: center;
+  @media (max-width: 650px) {
+    display: none;
+  }
+}
+@mixin paginatorMain {
+  justify-content: space-between;
+  margin: 2rem auto;
+  @media (max-width: 750px) {
+    flex-direction: column;
+    margin: 1rem auto;
+  }
+}
+@mixin shadowBox {
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.25rem;
+  background-color: $white;
+}
+$desktop: 1920px;
+$laptop: 1440px;
+$small-laptop: 1230px;
+$small-screen: 1024px;
+$tablet: 768px;
+$mobile: 482px;
+$small-mobile: 320px;
+$buttonBlockMobile: 600px;
