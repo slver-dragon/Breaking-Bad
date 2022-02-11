@@ -1,0 +1,54 @@
+@import "../../../assets/styles/style";
+
+.container {
+  border-top: 0.0625rem solid $gray;
+  .main {
+    display: flex;
+    justify-content: space-between;
+    @include standarFont;
+    margin: 0.75rem 0;
+    text-decoration: none;
+    .photoWrapper {
+      max-width: 4rem;
+      max-height: 4rem;
+      object-fit: cover;
+      margin-right: 0.2rem;
+      overflow: hidden;
+      .photo {
+        max-width: 4rem;
+        height: auto;
+      }
+    }
+    .inform {
+      display: inline-grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      align-items: center;
+      justify-content: space-around;
+      flex: 1 1 auto;
+      @include mediumFont;
+      .state {
+        display: inline-block;
+        padding: 0.5rem 0.75rem;
+        margin: 1rem 0 0.75rem;
+        justify-self: center;
+      }
+      .alive {
+        @include stateOnColor;
+      }
+      .deceased {
+        @include stateOffColor;
+      }
+      .presumedDead {
+        @include statePDColor;
+      }
+      .name {
+        color: $black;
+        justify-self: center;
+      }
+      .birthday {
+        color: $gray;
+        justify-self: center;
+      }
+    }
+  }
+}

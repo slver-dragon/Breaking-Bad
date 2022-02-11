@@ -1,0 +1,12 @@
+@import "../../../assets/styles/style";
+
+.button {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+  span {
+    @include mediumFont;
+    margin-left: 0.75rem;
+  }
+}

@@ -1,0 +1,23 @@
+@import "../../../assets/styles/style";
+.main {
+  display: flex;
+  align-items: center;
+  @include paginatorMain;
+  .pages {
+    display: flex;
+  }
+  .elementPerPage {
+    display: flex;
+    @include mediumFont;
+    align-items: center;
+  }
+  span {
+    margin: 0 auto;
+    padding: 0.29rem;
+  }
+  .active {
+    color: $yellow;
+    @include shadowBox;
+    padding: 0.29rem;
+  }
+}

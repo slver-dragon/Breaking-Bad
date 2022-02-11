@@ -1,0 +1,24 @@
+@import "../../../assets/styles/style";
+
+.main {
+  display: flex;
+  justify-content: space-between;
+  @include mediumFont;
+  @include mainContainer;
+  @include headerMain;
+  align-items: center;
+  margin: 0 auto;
+  .catalog {
+    display: block;
+    border: 0.0875rem solid $yellow;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    margin: 0.25rem 0;
+    padding: 0.45rem 1rem 0.3rem;
+    text-decoration: none;
+    color: $black;
+  }
+  .forCardList {
+    background-color: $yellow;
+  }
+}

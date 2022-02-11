@@ -1,0 +1,40 @@
+@import "../../../assets/styles/style";
+
+.main {
+  @include personSheetMain;
+  .photoWrapper {
+    @include personSheetPhotoWrapper;
+    .photo {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .inform {
+    @include personSheetInform;
+    .alive {
+      @include stateOnColor;
+    }
+    .deceased {
+      @include stateOffColor;
+    }
+    .presumedDead {
+      @include statePDColor;
+    }
+    .name {
+      @include personPageBigFont;
+      margin-bottom: 1rem;
+      color: $black;
+    }
+    .birthday,
+    .nickname,
+    .quote {
+      color: $black;
+    }
+    .quoteMargin {
+      margin-top: 2rem;
+    }
+    p {
+      margin-bottom: 1rem;
+    }
+  }
+}

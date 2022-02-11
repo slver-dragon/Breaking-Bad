@@ -1,0 +1,48 @@
+@import "../../../assets/styles/style";
+
+.main {
+  display: flex;
+  @include shadow;
+  @include standarFont;
+  max-width: 23.75rem;
+  margin: 0.75rem 0;
+  text-decoration: none;
+  background: $white;
+  .photoWrapper {
+    max-width: 7.75rem;
+    max-height: 7.75rem;
+    object-fit: cover;
+    margin-right: 6.33%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    border-radius: 0.25rem 0 0 0.25rem;
+    .photo {
+      max-width: 7.75rem;
+      height: auto;
+    }
+  }
+  .inform {
+    .state {
+      display: inline-block;
+      padding: 0.5rem 0.75rem;
+      margin: 1rem 0 0.75rem;
+    }
+    .alive {
+      @include stateOnColor;
+    }
+    .deceased {
+      @include stateOffColor;
+    }
+    .presumedDead {
+      @include statePDColor;
+    }
+    .name {
+      @include mediumFont;
+      color: $black;
+      margin-bottom: 0.5rem;
+    }
+    .birthday {
+      color: $gray;
+    }
+  }
+}

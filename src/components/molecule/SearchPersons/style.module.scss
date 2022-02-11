@@ -1,0 +1,21 @@
+@import "../../../assets/styles/style";
+
+.search {
+  margin: 1rem;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include mainContainer;
+    @include shadowBox;
+    max-width: 70rem;
+    margin: 2rem auto;
+    padding: 1rem;
+    input {
+      width: 90%;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
